@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Problems">
+      <UniqueIdentifier>{9d1b8bfe-ed82-46ba-8b4c-0314e5c746f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems">
+      <UniqueIdentifier>{c3f11e33-ac49-476f-a0b4-d4b34ac2274d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0002.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0001.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0055.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0003.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0004.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0005.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0006.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0007.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0008.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0009.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0010.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0011.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0012.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0013.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0014.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0015.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0016.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0017.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0018.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0019.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0020.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0021.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0022.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0023.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0024.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0025.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0026.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0027.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0028.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0029.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0030.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0031.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0032.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0033.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0034.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0035.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0036.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0037.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0038.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0039.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0040.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0041.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0042.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0043.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0044.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0045.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0046.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0047.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0048.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0049.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0050.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0051.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0052.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0053.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0054.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions_Initialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\Problem0056.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Problem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0055.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0001.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0002.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0003.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0004.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0005.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0006.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0007.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0008.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0009.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0010.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0011.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0012.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0013.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0014.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0015.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0016.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0017.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0018.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0019.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0020.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0021.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0022.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0023.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0024.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0025.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0026.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0027.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0028.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0029.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0030.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0031.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0032.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0033.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0034.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0035.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0036.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0037.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0038.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0039.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0040.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0041.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0042.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0043.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0044.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0045.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0046.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0047.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0048.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0049.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0050.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0051.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0052.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0053.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0054.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem_Includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0056.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Answers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

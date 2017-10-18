@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Solutions.cpp" />
+    <ClCompile Include="Solutions\Problem0001.cpp" />
+    <ClCompile Include="Solutions\Problem0002.cpp" />
+    <ClCompile Include="Solutions\Problem0003.cpp" />
+    <ClCompile Include="Solutions\Problem0004.cpp" />
+    <ClCompile Include="Solutions\Problem0005.cpp" />
+    <ClCompile Include="Solutions\Problem0006.cpp" />
+    <ClCompile Include="Solutions\Problem0007.cpp" />
+    <ClCompile Include="Solutions\Problem0008.cpp" />
+    <ClCompile Include="Solutions\Problem0009.cpp" />
+    <ClCompile Include="Solutions\Problem0010.cpp" />
+    <ClCompile Include="Solutions\Problem0011.cpp" />
+    <ClCompile Include="Solutions\Problem0012.cpp" />
+    <ClCompile Include="Solutions\Problem0013.cpp" />
+    <ClCompile Include="Solutions\Problem0014.cpp" />
+    <ClCompile Include="Solutions\Problem0015.cpp" />
+    <ClCompile Include="Solutions\Problem0016.cpp" />
+    <ClCompile Include="Solutions\Problem0017.cpp" />
+    <ClCompile Include="Solutions\Problem0018.cpp" />
+    <ClCompile Include="Solutions\Problem0019.cpp" />
+    <ClCompile Include="Solutions\Problem0020.cpp" />
+    <ClCompile Include="Solutions\Problem0021.cpp" />
+    <ClCompile Include="Solutions\Problem0022.cpp" />
+    <ClCompile Include="Solutions\Problem0023.cpp" />
+    <ClCompile Include="Solutions\Problem0024.cpp" />
+    <ClCompile Include="Solutions\Problem0025.cpp" />
+    <ClCompile Include="Solutions\Problem0026.cpp" />
+    <ClCompile Include="Solutions\Problem0027.cpp" />
+    <ClCompile Include="Solutions\Problem0028.cpp" />
+    <ClCompile Include="Solutions\Problem0029.cpp" />
+    <ClCompile Include="Solutions\Problem0030.cpp" />
+    <ClCompile Include="Solutions\Problem0031.cpp" />
+    <ClCompile Include="Solutions\Problem0032.cpp" />
+    <ClCompile Include="Solutions\Problem0033.cpp" />
+    <ClCompile Include="Solutions\Problem0034.cpp" />
+    <ClCompile Include="Solutions\Problem0035.cpp" />
+    <ClCompile Include="Solutions\Problem0036.cpp" />
+    <ClCompile Include="Solutions\Problem0037.cpp" />
+    <ClCompile Include="Solutions\Problem0038.cpp" />
+    <ClCompile Include="Solutions\Problem0039.cpp" />
+    <ClCompile Include="Solutions\Problem0040.cpp" />
+    <ClCompile Include="Solutions\Problem0041.cpp" />
+    <ClCompile Include="Solutions\Problem0042.cpp" />
+    <ClCompile Include="Solutions\Problem0043.cpp" />
+    <ClCompile Include="Solutions\Problem0044.cpp" />
+    <ClCompile Include="Solutions\Problem0045.cpp" />
+    <ClCompile Include="Solutions\Problem0046.cpp" />
+    <ClCompile Include="Solutions\Problem0047.cpp" />
+    <ClCompile Include="Solutions\Problem0048.cpp" />
+    <ClCompile Include="Solutions\Problem0049.cpp" />
+    <ClCompile Include="Solutions\Problem0050.cpp" />
+    <ClCompile Include="Solutions\Problem0051.cpp" />
+    <ClCompile Include="Solutions\Problem0052.cpp" />
+    <ClCompile Include="Solutions\Problem0053.cpp" />
+    <ClCompile Include="Solutions\Problem0054.cpp" />
+    <ClCompile Include="Solutions\Problem0055.cpp" />
+    <ClCompile Include="Solutions\Problem0056.cpp" />
+    <ClCompile Include="Solutions_Initialize.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Answers.h" />
+    <ClInclude Include="Problem.h" />
+    <ClInclude Include="Problem_Includes.h" />
+    <ClInclude Include="Solutions.h" />
+    <ClInclude Include="Solutions\Problem0001.h" />
+    <ClInclude Include="Solutions\Problem0002.h" />
+    <ClInclude Include="Solutions\Problem0003.h" />
+    <ClInclude Include="Solutions\Problem0004.h" />
+    <ClInclude Include="Solutions\Problem0005.h" />
+    <ClInclude Include="Solutions\Problem0006.h" />
+    <ClInclude Include="Solutions\Problem0007.h" />
+    <ClInclude Include="Solutions\Problem0008.h" />
+    <ClInclude Include="Solutions\Problem0009.h" />
+    <ClInclude Include="Solutions\Problem0010.h" />
+    <ClInclude Include="Solutions\Problem0011.h" />
+    <ClInclude Include="Solutions\Problem0012.h" />
+    <ClInclude Include="Solutions\Problem0013.h" />
+    <ClInclude Include="Solutions\Problem0014.h" />
+    <ClInclude Include="Solutions\Problem0015.h" />
+    <ClInclude Include="Solutions\Problem0016.h" />
+    <ClInclude Include="Solutions\Problem0017.h" />
+    <ClInclude Include="Solutions\Problem0018.h" />
+    <ClInclude Include="Solutions\Problem0019.h" />
+    <ClInclude Include="Solutions\Problem0020.h" />
+    <ClInclude Include="Solutions\Problem0021.h" />
+    <ClInclude Include="Solutions\Problem0022.h" />
+    <ClInclude Include="Solutions\Problem0023.h" />
+    <ClInclude Include="Solutions\Problem0024.h" />
+    <ClInclude Include="Solutions\Problem0025.h" />
+    <ClInclude Include="Solutions\Problem0026.h" />
+    <ClInclude Include="Solutions\Problem0027.h" />
+    <ClInclude Include="Solutions\Problem0028.h" />
+    <ClInclude Include="Solutions\Problem0029.h" />
+    <ClInclude Include="Solutions\Problem0030.h" />
+    <ClInclude Include="Solutions\Problem0031.h" />
+    <ClInclude Include="Solutions\Problem0032.h" />
+    <ClInclude Include="Solutions\Problem0033.h" />
+    <ClInclude Include="Solutions\Problem0034.h" />
+    <ClInclude Include="Solutions\Problem0035.h" />
+    <ClInclude Include="Solutions\Problem0036.h" />
+    <ClInclude Include="Solutions\Problem0037.h" />
+    <ClInclude Include="Solutions\Problem0038.h" />
+    <ClInclude Include="Solutions\Problem0039.h" />
+    <ClInclude Include="Solutions\Problem0040.h" />
+    <ClInclude Include="Solutions\Problem0041.h" />
+    <ClInclude Include="Solutions\Problem0042.h" />
+    <ClInclude Include="Solutions\Problem0043.h" />
+    <ClInclude Include="Solutions\Problem0044.h" />
+    <ClInclude Include="Solutions\Problem0045.h" />
+    <ClInclude Include="Solutions\Problem0046.h" />
+    <ClInclude Include="Solutions\Problem0047.h" />
+    <ClInclude Include="Solutions\Problem0048.h" />
+    <ClInclude Include="Solutions\Problem0049.h" />
+    <ClInclude Include="Solutions\Problem0050.h" />
+    <ClInclude Include="Solutions\Problem0051.h" />
+    <ClInclude Include="Solutions\Problem0052.h" />
+    <ClInclude Include="Solutions\Problem0053.h" />
+    <ClInclude Include="Solutions\Problem0054.h" />
+    <ClInclude Include="Solutions\Problem0055.h" />
+    <ClInclude Include="Solutions\Problem0056.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EulerLibs\EulerLibs.vcxproj">
+      <Project>{07e83760-5592-464f-a13d-51d7b67bad37}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D00D4623-773A-49F6-8B4C-BF398515A387}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EulerMain</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Devel\ProjectEuler\EulerLibs;E:\Devel\ProjectEuler\EulerMain;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
