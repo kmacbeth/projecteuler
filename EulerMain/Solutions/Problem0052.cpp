@@ -4,7 +4,7 @@
 namespace Euler {
 
     /**
-     * Problem: Permuted multiples
+     * Problem: Permuted multipliertiples
      *
      * It can be seen that the number, 125874, and its double, 251748, contain
      * exactly the same digits, but in a different order.
@@ -14,52 +14,34 @@ namespace Euler {
      */
     void Problem52::Solve()
     {
+		const uint32_t kLimit = 1000000000;
         uint32_t result = 0;
         
-        uint32_t s = 10000;
-        uint32_t t = 16666;
-        uint32_t x = s;
-
+        uint32_t lowerBound = 1;
+        uint32_t upperBound = 1;
+ 
         // We must have x # of digits = 6x # of digits,
         // So we need to test on a range of values of each n-digit numbers.
         // E.g.: [10000,16666]
+		bool bSolutionFound = false;
 
-        while (true)
+        while (lowerBound < kLimit && !bSolutionFound)
         {
-            const uint32_t num_xdigits = EulerLib::CountDigits(x);
+			// Adjust x by range [s, t] = [x0...0, x6...6]
+			lowerBound *= 10;
+			upperBound *= 10;
+			upperBound += 6;
 
-            // Check multipliers
-            uint32_t mul = 0;
+			std::cout << upperBound << " " << lowerBound << std::endl;
 
-            for (mul = 2; mul < 7; ++mul)
-            {
-                uint32_t value = mul * x;
-
-                if (!DoesDigitsOccurenceEqual(x, value))
-                {
-                    break;
-                }
-            }
-
-            // found when mul reached 7
-            if (mul == 7)
-            {
-                result = x;
-                break;
-            }
-
-            // Adjust x by range [s, t] = [x0...0, x6...6]
-            if (x == t)
-            {
-                s *= 10;
-                t *= 10;
-                t +=  6;
-                x = s;
-            }
-            else
-            {
-                ++x;
-            }
+			for (uint32_t x = lowerBound; x <= upperBound && !bSolutionFound; ++x)
+			{
+				bSolutionFound = HasDigitsOccurenceEqual(x);
+				if (bSolutionFound)
+				{
+					result = x;
+				}
+			}
         }
 
         SetAnswer(result);
@@ -73,31 +55,45 @@ namespace Euler {
      *
      * @return Whether both number are equal or not.
      */
-    bool Problem52::DoesDigitsOccurenceEqual(uint64_t a, uint64_t b)
+    bool Problem52::HasDigitsOccurenceEqual(uint32_t a_X)
     {
-        uint32_t a_digits[10] = { 0 };
-        uint32_t b_digits[10] = { 0 };
+		const uint32_t kLowerMultiplier = 2;
+		const uint32_t kHighestMultiplier = 6;
+ 		std::vector<uint32_t> vDigitsX(10, 0);
+		std::vector<uint32_t> vDigitsProductX(10, 0);
 
-        while (a > 0)
-        {
-            a_digits[a % 10]++;
-            a /= 10;
-        }
+		// Insert digits of X into an HashSet (uniquify digits)
+		uint32_t x = a_X;
 
-        while (b > 0)
-        {
-            b_digits[b % 10]++;
-            b /= 10;
-        }
+		while (x > 0)
+		{
+			++vDigitsX[x % 10];
+			x /= 10;
+		}
 
-        for (uint32_t i = 0; i < 10; ++i)
-        {
-            if (a_digits[i] != b_digits[i])
-            {
-                return false;
-            }
-        }
-        return true;
+		// Try each multplier from 2x to 6x, the must all contains the same digits
+		// but in different order.
+		uint32_t multiplier = 0;
+
+		for (multiplier = kLowerMultiplier; multiplier <= kHighestMultiplier; ++multiplier)
+		{
+			uint64_t productX = multiplier * a_X;
+
+			// Insert digits of X into an HashSet (uniquify digits)
+			while (productX > 0)
+			{
+				++vDigitsProductX[productX % 10];
+				productX /= 10;
+			}
+
+			if (vDigitsX != vDigitsProductX)
+			{
+				return false;
+			}
+
+			std::fill(vDigitsProductX.begin(), vDigitsProductX.end(), 0);
+		}
+
+		return true;
     }
-
 }

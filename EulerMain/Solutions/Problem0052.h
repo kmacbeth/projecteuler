@@ -14,7 +14,7 @@ namespace Euler {
         void Solve();
         
     private:
-        bool DoesDigitsOccurenceEqual(uint64_t a, uint64_t b);
+        bool HasDigitsOccurenceEqual(uint32_t a_X);
 
     };
 

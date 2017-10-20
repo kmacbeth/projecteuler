@@ -60,7 +60,7 @@ namespace Euler {
 
             for (uint32_t j = primeCumulativeSumSize - 1; j > (i + length); --j)
             {
-               uint32_t longestSum = vPrimeCumulativeSum[j] - lowestSum;
+                uint32_t longestSum = vPrimeCumulativeSum[j] - lowestSum;
 
                 if ((j - i) > length && sPrimes.find(longestSum) != sPrimes.end())
                 {
