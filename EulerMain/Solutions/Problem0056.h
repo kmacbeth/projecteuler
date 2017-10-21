@@ -12,7 +12,6 @@ namespace Euler {
         Problem56() : Problem("Problem 56") {}
         
         void Solve();
-
     };
 
 }
