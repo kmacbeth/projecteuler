@@ -23,20 +23,23 @@ namespace Euler {
      */
     void Problem53::Solve()
     {
+		const uint32_t kLowerBound = 1000000;
+		const uint32_t kMinN = 1;
+		const uint32_t kMaxN = 100;
         uint32_t result = 0;
 
         // We need to generate the Binomial Coefficients
         // For n = 5, C(1, r) = {1, 5, 10, 10, 5, 1} for r = 0..5
         // We basically need to find the first r where C(1, r) > 10**6
         // C(1,r) > 10**6 for [a, n-a]
-        for (uint32_t n = 1; n < 101; ++n)
+        for (uint32_t n = kMinN; n <= kMaxN; ++n)
         {
             // Only search at most half + 1 coefficients
             uint32_t limit = (((n & 1) == 0 ? 2 : 1) + n) / 2;
 
             for (uint32_t r = 0; r <= limit; ++r)
             {
-                if (EulerLib::GetBinomialCoefficient(n, r) >= 1000000)
+                if (EulerLib::GetBinomialCoefficient(n, r) >= kLowerBound)
                 {
                     result += (n + 1) - (2 * r);
                     break;

@@ -2,221 +2,7 @@
 #include "Libs/EulerMath.h"
 #include "Libs/EulerUtils.h"
 
-namespace Euler {
-    
-    /**
-     * Player default constructor
-     */
-    Problem54::Player::Player() :
-        m_HandRanks(),
-        m_Hand(),
-        m_Values(13),
-        m_ValuesIndexCache(),
-        m_Colors(13),
-        m_ColorsIndexCache()
-
-    {
-        BuildValuesCache();
-        BuildColorsCache();
-    }
-
-    /**
-     * Prebuild values [std::string] index
-     */
-    void Problem54::Player::BuildValuesCache()
-    {
-        for (uint32_t i = 0; i < 13; ++i)
-        {
-            m_ValuesIndexCache[kCardValues[i]] = i;
-        }
-    }
-
-    /**
-     * Prebuild colors [std::string] index
-     */
-    void Problem54::Player::BuildColorsCache()
-    {
-        for (uint32_t i = 0; i < 4; ++i)
-        {
-            m_ColorsIndexCache[kCardColors[i]] = i;
-        }
-    }
-
-    /**
-     * Add a card to player's hand
-     *
-     * @param card Card to add ([Value][Color])
-     */
-    void Problem54::Player::AddCard(std::string& card)
-    {
-        // Add card to hand
-        m_Hand.push_back(card);
-
-        // Add card value and color
-        m_Values[m_ValuesIndexCache[card.substr(0, 1)]]++;
-        m_Colors[m_ColorsIndexCache[card.substr(1, 1)]]++;
-    }
-
-    /**
-     * Initialize hand statistic and rank back to initial state.
-     */
-    void Problem54::Player::Initialize()
-    {
-        // Clear previous card values and types
-        // This safe as we use a POD type: uint32_t.
-        ::memset(&m_Values[0], 0, sizeof(m_Values[0]) * m_Values.size());
-        ::memset(&m_Colors[0], 0, sizeof(m_Colors[0]) * m_Colors.size());
-
-        m_HandRanks.clear();
-    }
-
-    /**
-     * Compute and return the player current hand.
-     *
-     * @return An object returning the current rank and accompanying
-     *        information to determine a winning hand.
-     */
-    const Problem54::Player::THandRank& Problem54::Player::GetHand()
-    {
-        // Check if we've got five of the same color
-        bool five_colors = false;
-
-        for (const auto& color : m_Colors)
-        {
-            if (color == 5)
-            {
-                five_colors = true;
-            }
-        }
-
-        // Check 4-3-2 same values and sequence of five consecutive values
-        std::vector<int32_t> num2;
-        std::vector<int32_t> single_cards;
-        uint32_t highest_card = 0;
-        uint32_t count_of_five = 0;
-        int32_t num4 = -1;
-        int32_t num3 = -1;
-
-        for (uint32_t i = 0; i < 13; ++i)
-        {
-            if (m_Values[i] > 0)
-            {
-                highest_card = i;
-            }
-
-            if (m_Values[i] > 3)
-            {
-                num4 = i;
-            }
-            else if (m_Values[i] > 2)
-            {
-                num3 = i;
-            }
-            else if (m_Values[i] > 1)
-            {
-                num2.push_back(i);
-            }
-            else if (m_Values[i] > 0)
-            {
-                count_of_five++;
-                single_cards.push_back(i);
-            }
-            else
-            {
-                if (count_of_five < 5)
-                {
-                    count_of_five = 0;
-                }
-            }
-        }
-
-        // Royal and straight flush
-        if (five_colors && count_of_five == 5)
-        {
-            if (m_Values[12] == 1) // Ace
-            {
-                m_HandRanks.push_back(std::make_pair("RF", ""));
-            }
-            else
-            {
-                m_HandRanks.push_back(std::make_pair("SF", kCardValues[highest_card]));
-            }
-            return m_HandRanks;
-        }
-
-        // Four-of-a-kind
-        if (num4 > -1)
-        {
-            m_HandRanks.clear();
-            m_HandRanks.push_back(std::make_pair("4K", ""));
-            return m_HandRanks;
-        }
-
-        // Full house
-        if (num3 > -1 && num2.size() == 1)
-        {
-            m_HandRanks.clear();
-            m_HandRanks.push_back(std::make_pair("FH", kCardValues[num3]));
-            return m_HandRanks;
-        }
-
-        // Flush
-        if (five_colors)
-        {
-            m_HandRanks.push_back(std::make_pair("F", kCardValues[highest_card]));
-            return m_HandRanks;
-        }
-
-        // Straight
-        if (count_of_five == 5 || // A-2-3-4-5
-                (single_cards.size() == 5 && 
-                 m_Values[12] && m_Values[0] && m_Values[1] && m_Values[2] && m_Values[3]))
-        {
-            m_HandRanks.push_back(std::make_pair("S", kCardValues[highest_card]));
-            return m_HandRanks;
-        }
-
-        // Three-of-a-kind
-        if (num3 > -1)
-        {
-            m_HandRanks.push_back(std::make_pair("3K", ""));
-            return m_HandRanks;
-        }
-
-        // Two pairs
-        if (num2.size() == 2)
-        {
-            m_HandRanks.push_back(std::make_pair("2P", kCardValues[num2[0] > num2[1] ? num2[0] : num2[1]]));
-            m_HandRanks.push_back(std::make_pair("2P", kCardValues[num2[1] > num2[0] ? num2[1] : num2[0]]));
-            m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[0]]));
-            return m_HandRanks;
-        }
-
-        // Single pair
-        if (num2.size() == 1)
-        {
-            m_HandRanks.push_back(std::make_pair("P", kCardValues[num2[0]]));
-            m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[2]]));
-            m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[1]]));
-            m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[0]]));
-            return m_HandRanks;
-        }
-
-        // Highests
-        m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[4]]));
-        m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[3]]));
-        m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[2]]));
-        m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[1]]));
-        m_HandRanks.push_back(std::make_pair("H", kCardValues[single_cards[0]]));
-
-        return m_HandRanks;
-    }
-
-
-    const std::string Problem54::kCardColors[4] = { "C", "D", "S", "H" };
-    const std::string Problem54::kCardValues[13] = { "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A" };
-    const std::string Problem54::kRank[10] = {"H", "P", "2P", "3K", "S", "F", "FH", "4K", "SF", "RT"};
-    
+namespace Euler {  
     
     /**
      * Problem: Poker hands
@@ -278,20 +64,20 @@ namespace Euler {
         size_t numLines = vLines.size();
 
         uint32_t result = 0;
-        std::vector<Player> players(2);
+        std::vector<_Problem54::Hand> vHands(2);
 
         // For each line in file (both players' hand) determine a winner.
         //while (std::getline(input_file, line))
         for (size_t i = 0; i < numLines; ++i)
         {
-            players[0].Initialize();
-            players[1].Initialize();
+			vHands[0].Initialize();
+			vHands[1].Initialize();
 
-            GetPlayersHand(vLines[i], players);
+            GetPlayersHand(vLines[i], vHands);
             
             // Determine the player hand rank
-            const auto& hand0 = players[0].GetHand();
-            const auto& hand1 = players[1].GetHand();
+            const auto& hand0 = vHands[0].GetRank();
+            const auto& hand1 = vHands[1].GetRank();
 
             // Then we compare rank and resolve when rank are equals
             uint32_t size = std::min(hand0.size(), hand1.size());
@@ -328,31 +114,41 @@ namespace Euler {
             }
         }
 
-        //input_file.close();
-
         SetAnswer(result);
     }
 
-
-    void Problem54::GetPlayersHand(std::string& line,
-                                   std::vector<Problem54::Player>& players)
+	/**
+	 * Get players hands from string.
+	 *
+	 * @param a_rstrLine Line containing the string with the hand.
+	 * @param a_rHand    Hands container.
+	 */
+    void Problem54::GetPlayersHand(std::string& a_rstrLine,
+                                   std::vector<_Problem54::Hand>& a_rHands)
     {
-        std::istringstream hands(line);
-        std::string card;
+        std::istringstream ssHands(a_rstrLine);
+        std::string strCard;
 
         for (uint32_t i = 0; i < 10; ++i)
         {
-            std::getline(hands, card, ' ');
+            std::getline(ssHands, strCard, ' ');
             
-            players[i / 5].AddCard(card);
+			a_rHands[i / 5].AddCard(strCard);
         }
     }
 
-    uint32_t Problem54::FindRankIndex(const std::string& rank)
+	/**
+	 * Find rank index.
+	 *
+	 * @param a_rstrRank Current hand rank.
+	 *
+	 * @return Index of the rank from the table.
+	 */
+    uint32_t Problem54::FindRankIndex(const std::string& a_rstrRank)
     {
         for (uint32_t i = 10; i > 0; --i)
         {
-            if (kRank[i - 1] == rank)
+            if (_Problem54::Hand::kRank[i - 1] == a_rstrRank)
             {
                 return i;
             }
@@ -361,23 +157,31 @@ namespace Euler {
         return 0;
     }
 
-    bool Problem54::IsValueGreaterThan(const std::string& lhs, const std::string& rhs)
+	/**
+	 * Check left value is greater than right value.
+	 *
+	 * @param a_rLhs Left-hand value.
+	 * @param a_rRhs Right-hand value.
+	 *
+	 * @return Whether left value is greater.
+	 */
+    bool Problem54::IsValueGreaterThan(const std::string& a_rLhs, const std::string& a_rRhs)
     {
-        uint32_t lhs_value = 0;
-        uint32_t rhs_value = 0;
+        uint32_t lhsValue = 0;
+        uint32_t rhsValue = 0;
 
         for (uint32_t i = 13; i > 0; --i)
         {
-            if (kCardValues[i - 1] == lhs)
+            if (_Problem54::Hand::kCardValues[i - 1] == a_rLhs)
             {
-                lhs_value = i;
+                lhsValue = i;
             }
-            if (kCardValues[i - 1] == rhs)
+            if (_Problem54::Hand::kCardValues[i - 1] == a_rRhs)
             {
-                rhs_value = i;
+                rhsValue = i;
             }
         }
 
-        return (lhs_value > rhs_value);
+        return (lhsValue > rhsValue);
     }
 }

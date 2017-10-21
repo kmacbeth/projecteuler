@@ -75,6 +75,7 @@
     <ClCompile Include="Solutions\Problem0052.cpp" />
     <ClCompile Include="Solutions\Problem0053.cpp" />
     <ClCompile Include="Solutions\Problem0054.cpp" />
+    <ClCompile Include="Solutions\Problem0054_Hand.cpp" />
     <ClCompile Include="Solutions\Problem0055.cpp" />
     <ClCompile Include="Solutions\Problem0056.cpp" />
     <ClCompile Include="Solutions_Initialize.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Solutions\Problem0052.h" />
     <ClInclude Include="Solutions\Problem0053.h" />
     <ClInclude Include="Solutions\Problem0054.h" />
+    <ClInclude Include="Solutions\Problem0054_Hand.h" />
     <ClInclude Include="Solutions\Problem0055.h" />
     <ClInclude Include="Solutions\Problem0056.h" />
   </ItemGroup>

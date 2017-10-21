@@ -32,8 +32,6 @@ namespace Euler {
 			upperBound *= 10;
 			upperBound += 6;
 
-			std::cout << upperBound << " " << lowerBound << std::endl;
-
 			for (uint32_t x = lowerBound; x <= upperBound && !bSolutionFound; ++x)
 			{
 				bSolutionFound = HasDigitsOccurenceEqual(x);
@@ -62,7 +60,7 @@ namespace Euler {
  		std::vector<uint32_t> vDigitsX(10, 0);
 		std::vector<uint32_t> vDigitsProductX(10, 0);
 
-		// Insert digits of X into an HashSet (uniquify digits)
+		// Count each digit
 		uint32_t x = a_X;
 
 		while (x > 0)
@@ -83,7 +81,7 @@ namespace Euler {
 			while (productX > 0)
 			{
 				++vDigitsProductX[productX % 10];
-				productX /= 10;
+					productX /= 10;
 			}
 
 			if (vDigitsX != vDigitsProductX)

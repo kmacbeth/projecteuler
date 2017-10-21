@@ -194,6 +194,9 @@
     <ClCompile Include="Solutions\Problem0056.cpp">
       <Filter>Source Files\Problems</Filter>
     </ClCompile>
+    <ClCompile Include="Solutions\Problem0054_Hand.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problem.h">
@@ -375,6 +378,9 @@
     </ClInclude>
     <ClInclude Include="Answers.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Solutions\Problem0054_Hand.h">
+      <Filter>Header Files\Problems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
