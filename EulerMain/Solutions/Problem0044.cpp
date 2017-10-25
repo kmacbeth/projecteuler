@@ -11,38 +11,38 @@ namespace Euler {
      *
      *  1, 5, 12, 22, 35, 51, 70, 92, 117, 145, ...
      *
-     * It can be seen that P4 + P7 = 22 + 70 = 92 = P8. However, their 
+     * It can be seen that P4 + P7 = 22 + 70 = 92 = P8. However, their
      * difference, 70 − 22 = 48, is not pentagonal.
      *
-     * Find the pair of pentagonal numbers, Pj and Pk, for which their sum and 
-     * difference are pentagonal and D = |Pk − Pj| is minimised; what is the 
+     * Find the pair of pentagonal numbers, Pj and Pk, for which their sum and
+     * difference are pentagonal and D = |Pk − Pj| is minimised; what is the
      * value of D?
      */
     void Problem44::Solve()
     {
-		uint32_t result = 0;
-		bool bMinimized = false;
-		uint32_t j = 1;
+        uint32_t result = 0;
+        bool bMinimized = false;
+        uint32_t j = 1;
 
-		// We never have to check for Pk = Pj, so we will always check
-		// for a given Pj, all Pk < Pj such that Pj = {P1, ..., Pj-1)
-		while (!bMinimized)
-		{
-			uint32_t pj = (j * (3 * j - 1)) >> 1;
+        // We never have to check for Pk = Pj, so we will always check
+        // for a given Pj, all Pk < Pj such that Pj = {P1, ..., Pj-1)
+        while (!bMinimized)
+        {
+            uint32_t pj = (j * (3 * j - 1)) >> 1;
 
-			for (uint32_t k = j - 1; k > 0 && !bMinimized; --k)
-			{
-				uint32_t pk = (k * (3 * k - 1)) >> 1;
+            for (uint32_t k = j - 1; k > 0 && !bMinimized; --k)
+            {
+                uint32_t pk = (k * (3 * k - 1)) >> 1;
 
-				if (EulerLib::IsPentagonalNumber(pj + pk) && EulerLib::IsPentagonalNumber(pj - pk))
-				{
-					result = pj - pk;
-					bMinimized = true;
-				}
-			}
+                if (EulerLib::IsPentagonalNumber(pj + pk) && EulerLib::IsPentagonalNumber(pj - pk))
+                {
+                    result = pj - pk;
+                    bMinimized = true;
+                }
+            }
 
-			++j;
-		}
+            ++j;
+        }
 
         SetAnswer(result);
     }

@@ -14,7 +14,7 @@ public:
 
     bool ParseArgs(TCmdLine& a_rCmdLine);
     void Run();
-    
+
 private:
     void Initialize();
     void CompareAnswers(const std::string& a_rSolved, const std::string& a_rExpected) const;

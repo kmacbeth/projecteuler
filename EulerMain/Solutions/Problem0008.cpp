@@ -5,7 +5,7 @@ namespace Euler {
     /**
      * Problem: Largest product in a series
      *
-     * The four adjacent digits in the 1000-digit number that have the greatest 
+     * The four adjacent digits in the 1000-digit number that have the greatest
      * product are 9 x 9 x 8 x 9 = 5832.
      *
      *           73167176531330624919225119674426574742355349194934
@@ -28,8 +28,8 @@ namespace Euler {
      *           84580156166097919133875499200524063689912560717606
      *           05886116467109405077541002256983155200055935729725
      *           71636269561882670428252483600823257530420752963450
-     * 
-     * Find the thirteen adjacent digits in the 1000-digit number that have the 
+     *
+     * Find the thirteen adjacent digits in the 1000-digit number that have the
      * greatest product. What is the value of this product?
      */
     void Problem8::Solve()

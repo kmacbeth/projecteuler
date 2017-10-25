@@ -20,7 +20,7 @@ namespace Euler {
      * powers of their digits.
      */
     void Problem30::Solve()
-    {       
+    {
         // We need to find a lower bound and an upper bound to our search.
         // Our smallest single digit is 0 and we need at least 2 digits, so
         // we can start at 10.

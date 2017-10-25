@@ -14,13 +14,13 @@ namespace Euler {
     {
         const uint64_t kNumber = 600851475143ull;
         uint64_t result = 0;
-        
+
         EulerLib::PrimeFactorizer::FactorList vFactors;
         EulerLib::PrimeFactorizer factorize;
-        
+
         factorize(kNumber, vFactors);
 
-        // factors are always ordered ascending, so largest prime 
+        // factors are always ordered ascending, so largest prime
         // is the last element.
         result = vFactors.back().m_Base;
 

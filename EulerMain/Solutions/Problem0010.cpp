@@ -16,7 +16,7 @@ namespace Euler {
 
         EulerLib::EratosthenesSieve  sieve;
         EulerLib::PrimeSieve::Primes vPrimes;
-        
+
         uint64_t result = 0;
 
         // Generate primes < 2000000

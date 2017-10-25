@@ -5,11 +5,11 @@
 
 namespace EulerLib {
 
-	class DivisorFunction {
+    class DivisorFunction {
 
-	public:
+    public:
         uint64_t operator() (uint64_t a_Number, uint32_t a_KthPower);
-	};
+    };
 
 }
 

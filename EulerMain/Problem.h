@@ -12,20 +12,20 @@ namespace Euler {
 
         const std::string& GetProblemName() { return m_ProblemName; }
         const std::string& GetAnswer()      { return m_Answer; }
-        
+
         template<class T> inline void SetAnswer(T& a_rAnswer);
         template<>        inline void SetAnswer(std::string& a_rstrAnswer);
-        
+
         virtual void Solve() = 0;
 
     protected:
-        Problem(const char * a_pProblemName) : 
+        Problem(const char * a_pProblemName) :
             m_ProblemName(a_pProblemName),
             m_Answer("")
         {}
 
-        inline void ShowAnswer() 
-        { 
+        inline void ShowAnswer()
+        {
             std::cout << m_ProblemName << ": " << m_Answer << std::endl;
         }
 
@@ -40,7 +40,7 @@ namespace Euler {
      */
     template<class T>
     inline void Problem::SetAnswer(T& a_rAnswer)
-    { 
+    {
         m_Answer = std::to_string(a_rAnswer);
         ShowAnswer();
     }
@@ -52,8 +52,8 @@ namespace Euler {
      */
     template<>
     inline void Problem::SetAnswer(std::string& a_rstrAnswer)
-    { 
-        m_Answer = a_rstrAnswer; 
+    {
+        m_Answer = a_rstrAnswer;
         ShowAnswer();
     }
 

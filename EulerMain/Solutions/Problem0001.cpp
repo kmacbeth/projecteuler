@@ -5,7 +5,7 @@ namespace Euler {
     /**
      * Problem: Multiples of 3 and 5
      *
-     * If we list all the natural numbers below 10 that are multiples of 3 or 5, 
+     * If we list all the natural numbers below 10 that are multiples of 3 or 5,
      * we get 3, 5, 6 and 9. The sum of these multiples is 23.
      *
      * Find the sum of all the multiples of 3 or 5 below 1000.
@@ -14,9 +14,9 @@ namespace Euler {
     {
         const uint32_t kLimit = 1000;
         uint64_t result = 0;
-   
+
         // Sum all multiple of 3 and 5, but remove once the common ones.
-        result = SumMultipleOfAKind( 3, kLimit) + 
+        result = SumMultipleOfAKind( 3, kLimit) +
                  SumMultipleOfAKind( 5, kLimit) -
                  SumMultipleOfAKind(15, kLimit);
 

@@ -9,7 +9,7 @@ int main(int argc, char * argv[])
 
     if (solutions.ParseArgs(cmdLine))
     {
-        // Run a solution    
+        // Run a solution
         solutions.Run();
     }
 

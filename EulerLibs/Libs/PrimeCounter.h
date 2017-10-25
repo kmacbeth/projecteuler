@@ -5,11 +5,11 @@
 
 namespace EulerLib {
 
-	class PrimeCounter {
+    class PrimeCounter {
 
-	public:
-		uint64_t operator()(uint64_t limit);
-	};
+    public:
+        uint64_t operator()(uint64_t limit);
+    };
 
 }
 

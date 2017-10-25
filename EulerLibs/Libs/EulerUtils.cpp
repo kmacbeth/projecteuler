@@ -40,8 +40,8 @@ namespace EulerLib {
      * @param a_rvTokens  Tokens generated.
      * @param a_Delimiter Token separator.
      */
-    void Tokenize(std::string& a_rstrLine, 
-                  std::vector<std::string>& a_rvTokens, 
+    void Tokenize(std::string& a_rstrLine,
+                  std::vector<std::string>& a_rvTokens,
                   char a_Delimiter)
     {
         std::istringstream tokens(a_rstrLine);

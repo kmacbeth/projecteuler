@@ -13,7 +13,7 @@ namespace EulerTest {
         TestReadFile();
         TestTokenize();
         TestToNumber();
-		TestToVector();
+        TestToVector();
 
         return true;
     }
@@ -80,28 +80,28 @@ namespace EulerTest {
 
         assert(dwNumber == 123456 &&
                "Number is wrong");
-    
+
         std::cout << "... PASS" << std::endl;
     }
 
-	/**
-	 * Test vector conversion.
-	 */
-	void TestEulerUtils::TestToVector()
-	{
-		std::cout << __FUNCTION__;
+    /**
+     * Test vector conversion.
+     */
+    void TestEulerUtils::TestToVector()
+    {
+        std::cout << __FUNCTION__;
 
-		std::vector<uint32_t> vDigits;
-		uint32_t dwNumber = 1234567;
+        std::vector<uint32_t> vDigits;
+        uint32_t dwNumber = 1234567;
 
-		ToVector(dwNumber, vDigits);
+        ToVector(dwNumber, vDigits);
 
-		for (std::size_t i = 0; i < vDigits.size(); ++i)
-		{
-			assert(vDigits[i] == (7 - i) &&
-			       "Wrong vector conversion.");
-		}
+        for (std::size_t i = 0; i < vDigits.size(); ++i)
+        {
+            assert(vDigits[i] == (7 - i) &&
+                   "Wrong vector conversion.");
+        }
 
-		std::cout << "... PASS" << std::endl;
-	}
+        std::cout << "... PASS" << std::endl;
+    }
 }

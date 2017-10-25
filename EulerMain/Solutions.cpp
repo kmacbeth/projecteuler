@@ -73,7 +73,7 @@ bool Solutions::ParseArgs(TCmdLine& a_rCmdLine)
 
     std::cerr << "[ERROR] You must supply a problem number. "
                 << "Try --help." << std::endl;
-    
+
     return false;
 }
 
@@ -84,7 +84,7 @@ bool Solutions::ParseArgs(TCmdLine& a_rCmdLine)
  */
 void Solutions::Run()
 {
-    
+
     uint32_t index = m_Number - 1;
 
     if (m_bBatchMode)
@@ -92,7 +92,7 @@ void Solutions::Run()
         for (uint32_t i = index; i < m_pvProblemList.size(); ++i)
         {
             m_pvProblemList[i]->Solve();
-            
+
             CompareAnswers(m_pvProblemList[i]->GetAnswer(), kAnswers[i]);
         }
     }
@@ -116,17 +116,17 @@ void Solutions::Run()
  * @param a_rExpected The ex
  */
 void Solutions::CompareAnswers(const std::string& a_rSolved, const std::string& a_rExpected) const
-{           
+{
     if (a_rSolved != "" && a_rSolved != a_rExpected)
     {
         std::cout << "[ERROR] Solved [" << a_rSolved << "] "
                   << "but should be ["  << a_rExpected << "]" << std::endl;
     }
 }
-    
+
 /**
  * Display help text.
- * 
+ *
  * @return Always false to prevent further execution.
  */
 bool Solutions::DisplayHelp()
@@ -148,7 +148,7 @@ bool Solutions::DisplayHelp()
 }
 /**
  * Display problem numbers.
- * 
+ *
  * @return Always false to prevent further execution.
  */
 bool Solutions::DisplayProblemNumbers()

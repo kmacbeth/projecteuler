@@ -144,7 +144,7 @@ namespace EulerLib {
             }
 
             digits[n % 10]++;
-            
+
             if (digits[n % 10] > 1)
             {
                 return false;
@@ -164,5 +164,5 @@ namespace EulerLib {
 
         return (sum == a_NumDigits);
     }
-    
+
 }

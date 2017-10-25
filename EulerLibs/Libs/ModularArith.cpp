@@ -2,7 +2,7 @@
 #include "EulerMath.h"
 
 namespace EulerLib {
-    
+
     /**
      * Modular Addition.
      *
@@ -36,7 +36,7 @@ namespace EulerLib {
         int64_t ap = EulerLib::Modulus(a, modulus);
         int64_t bp = EulerLib::Modulus(b, modulus);
 
-        return EulerLib::Modulus(ap * bp, modulus);        
+        return EulerLib::Modulus(ap * bp, modulus);
     }
 
     /**
@@ -56,6 +56,6 @@ namespace EulerLib {
             value = EulerLib::Modulus(value * a, modulus);
         }
 
-        return value;        
+        return value;
     }
 }

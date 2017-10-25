@@ -7,7 +7,7 @@ namespace EulerLib {
 
     template<typename T>
     class FibonacciSequence {
-        
+
     public:
         FibonacciSequence(T a_First, T a_Second);
 

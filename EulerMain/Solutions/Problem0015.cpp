@@ -6,8 +6,8 @@ namespace Euler {
     /**
      * Problem: Lattice paths
      *
-     * Starting in the top left corner of a 2×2 grid, and only being able to move 
-     * to the right and down, there are exactly 6 routes to the bottom right 
+     * Starting in the top left corner of a 2×2 grid, and only being able to move
+     * to the right and down, there are exactly 6 routes to the bottom right
      * corner.
      *
      *    ooooooo  oooo--+  oooo--+
@@ -26,16 +26,16 @@ namespace Euler {
      */
     void Problem15::Solve()
     {
-	    // Reference: https://en.wikipedia.org/wiki/Lattice_path#Combinations_and_NE_lattice_paths
-	    //            https://en.wikipedia.org/wiki/Binomial_coefficient#Multiplicative_formula
+        // Reference: https://en.wikipedia.org/wiki/Lattice_path#Combinations_and_NE_lattice_paths
+        //            https://en.wikipedia.org/wiki/Binomial_coefficient#Multiplicative_formula
         //
-	    // Number of lattice path from (0, 0) to (20, 20) 
-	    //
-	    // Here,  (n) = ___n!___ is the binomial coefficient where n = n + k
-	    //        (k)   k!(n-k)!                               and k = n
-	    //
-	    const uint64_t kWidth = 20;
-	    const uint64_t kHeight = 20;
+        // Number of lattice path from (0, 0) to (20, 20)
+        //
+        // Here,  (n) = ___n!___ is the binomial coefficient where n = n + k
+        //        (k)   k!(n-k)!                               and k = n
+        //
+        const uint64_t kWidth = 20;
+        const uint64_t kHeight = 20;
 
         uint64_t result = EulerLib::GetBinomialCoefficient(kWidth + kHeight, kHeight);
 

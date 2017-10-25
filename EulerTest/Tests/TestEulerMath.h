@@ -27,8 +27,8 @@ namespace EulerTest {
         void TestPower();
         void TestBase10Shifts();
         void TestIsTriangularNumber();
-		void TestIsPentagonalNumber();
-		void TestIsHexagonalNumber();
+        void TestIsPentagonalNumber();
+        void TestIsHexagonalNumber();
         void TestFindCombinations();
     };
 

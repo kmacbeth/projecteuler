@@ -26,13 +26,13 @@ public:
     bool Run();
 
 private:
-	typedef std::map<std::string, TestCase *> TestDict;
+    typedef std::map<std::string, TestCase *> TestDict;
 
     void Initialize();
     void InitializeUnitTest(TestCase * a_pTestCase);
     void InitializePerfTest(TestCase * a_pTestCase);
 
-	bool SanitityCheckArgs();
+    bool SanitityCheckArgs();
 
     bool DisplayHelp();
     bool DisplayTestName();
@@ -43,8 +43,8 @@ private:
 
     //std::vector<TestCase *> m_pUnitTests;
     std::vector<TestCase *> m_pPerfTests;
-	TestDict m_pUnitTestLookup;
-	TestDict m_pPerfTestLookup;
+    TestDict m_pUnitTestLookup;
+    TestDict m_pPerfTestLookup;
 };
 
 #endif // __EULER_TESTAPP__

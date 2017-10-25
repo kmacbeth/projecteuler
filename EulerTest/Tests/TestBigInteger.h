@@ -10,7 +10,7 @@ namespace EulerTest {
     public:
         TestBigInteger() : TestCase("BigInteger") {}
         ~TestBigInteger() {}
-            
+
         bool Run();
 
     private:

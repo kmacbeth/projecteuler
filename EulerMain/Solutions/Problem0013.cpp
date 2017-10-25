@@ -6,9 +6,9 @@ namespace Euler {
     /**
      * Problem: Large sum
      *
-     * Work out the first ten digits of the sum of the following one-hundred 
+     * Work out the first ten digits of the sum of the following one-hundred
      * 50-digit numbers.
-     *             
+     *
      *             37107287533902102798797998220837590246510135740250
      *             46376937677490009712648124896970078050417018260538
      *             74324986199524741059474233309513058123726617309629
@@ -112,7 +112,7 @@ namespace Euler {
      */
     void Problem13::Solve()
     {
-        const std::string kBigNumbers[] = {    
+        const std::string kBigNumbers[] = {
             "37107287533902102798797998220837590246510135740250",
             "46376937677490009712648124896970078050417018260538",
             "74324986199524741059474233309513058123726617309629",
@@ -219,12 +219,12 @@ namespace Euler {
 
         for(uint32_t i = 0; i < kNumBigNumbers; ++i)
         {
-            bigSum += kBigNumbers[i]; 
+            bigSum += kBigNumbers[i];
         }
 
         // Get first 10 digits (most significant);
         std::string result = bigSum.ToString().substr(0, 10);
-        
+
         SetAnswer(result);
      }
 

@@ -10,7 +10,7 @@ namespace EulerTest {
     public:
         TestFibonacciSequence() : TestCase("FibonacciSequence") {}
         ~TestFibonacciSequence() {}
-            
+
         bool Run();
 
     private:

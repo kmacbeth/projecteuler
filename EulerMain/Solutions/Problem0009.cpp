@@ -5,11 +5,11 @@ namespace Euler {
     /**
      * Problem: Special Pythagorean triplet
      *
-     * A Pythagorean triplet is a set of three natural numbers, a < b < c, 
+     * A Pythagorean triplet is a set of three natural numbers, a < b < c,
      * for which,
      *
      *                          a**2 + b**2 = c**2
-     * 
+     *
      * For example, 32 + 42 = 9 + 16 = 25 = 52.
      *
      * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
@@ -22,7 +22,7 @@ namespace Euler {
         // Let c = N - a - b -> a**2 + b**2 = (N - a - b)**2
         //
         // By simplification, we can isolate b:
-        //    
+        //
         //              b(1000 - a) = 1000(500 - a)
         // Thus
         //                        b = 1000(500 - a) / (1000 - a)
@@ -32,7 +32,7 @@ namespace Euler {
         //
         //        m = (1000 - a) and n = (500 - a) => bm = n
         //        n (mod m) = 0  =>  found solution
-        //       
+        //
         const uint32_t N = 1000;
 
         uint32_t a = 0;

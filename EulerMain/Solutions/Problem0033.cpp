@@ -6,17 +6,17 @@ namespace Euler {
     /**
      * Problem: Digit cancelling fractions
      *
-     * The fraction 49/98 is a curious fraction, as an inexperienced 
+     * The fraction 49/98 is a curious fraction, as an inexperienced
      * mathematician in attempting to simplify it may incorrectly believe
      * that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
      *
      * We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
      *
      * There are exactly four non-trivial examples of this type of fraction,
-     * less than one in value, and containing two digits in the numerator and 
+     * less than one in value, and containing two digits in the numerator and
      * denominator.
      *
-     * If the product of these four fractions is given in its lowest common 
+     * If the product of these four fractions is given in its lowest common
      * terms, find the value of the denominator.
      */
     void Problem33::Solve()
@@ -29,7 +29,7 @@ namespace Euler {
         // otherwise it will be greater than one.
         for (uint32_t numerator = 10; numerator < kMaxNumber; ++numerator)
         {
-            for (uint32_t denominator = numerator + 1; 
+            for (uint32_t denominator = numerator + 1;
                  denominator <= kMaxNumber; ++denominator)
             {
                 uint32_t numeratorDigitUnit = numerator % 10;
@@ -39,18 +39,18 @@ namespace Euler {
 
                 // We know that n/d < 1 and so if the digit fraction a/b >= 1,
                 // we cannot generate a fraction with the same value.
-                if (numeratorDigitTens == denominatorDigitUnit && 
+                if (numeratorDigitTens == denominatorDigitUnit &&
                     numeratorDigitUnit < denominatorDigitTens)
                 {
-                    FindEqualFractions(numerator, denominator, 
+                    FindEqualFractions(numerator, denominator,
                                        numeratorDigitUnit, denominatorDigitTens, fractions);
                 }
-                else if (numeratorDigitUnit == denominatorDigitTens && 
+                else if (numeratorDigitUnit == denominatorDigitTens &&
                          numeratorDigitTens < denominatorDigitUnit)
                 {
-                    FindEqualFractions(numerator, denominator, 
+                    FindEqualFractions(numerator, denominator,
                                        numeratorDigitTens, denominatorDigitUnit, fractions);
-                } 
+                }
             }
         }
 
@@ -68,7 +68,7 @@ namespace Euler {
         }
 
         // For the result, we only need to simplify the denominator
-        result = productDenominator / 
+        result = productDenominator /
                  EulerLib::GCD(productNumerator, productDenominator);
 
         SetAnswer(result);
@@ -83,10 +83,10 @@ namespace Euler {
      * @param a_DenominatorDigit Fraction denominator single digit to test.
      * @param a_rvfractions      Fraction list.
      */
-    void Problem33::FindEqualFractions(uint32_t a_Numerator, 
-                                       uint32_t a_Denominator, 
-                                       uint32_t a_NumeratorDigit, 
-                                       uint32_t a_DenominatorDigit, 
+    void Problem33::FindEqualFractions(uint32_t a_Numerator,
+                                       uint32_t a_Denominator,
+                                       uint32_t a_NumeratorDigit,
+                                       uint32_t a_DenominatorDigit,
                                        FractionList& a_rvfractions)
     {
          // Either zero or division by zero

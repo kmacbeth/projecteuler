@@ -9,7 +9,7 @@ namespace Euler {
      * The decimal number, 585 = 1001001001b (binary), is palindromic in both
      * bases.
      *
-     * Find the sum of all numbers, less than one million, which are 
+     * Find the sum of all numbers, less than one million, which are
      * palindromic in base 10 and base 2.
      *
      * (Please note that the palindromic number, in either base, may not include
@@ -23,12 +23,12 @@ namespace Euler {
         for (uint32_t i = 0; i < kLimit; ++i)
         {
             // Check base 10 and 2 is palindrom
-            if (EulerLib::IsPalindromic(i, 10) && 
+            if (EulerLib::IsPalindromic(i, 10) &&
                 EulerLib::IsPalindromic(i, 2))
             {
                 result += i;
             }
-        }        
+        }
 
         SetAnswer(result);
     }

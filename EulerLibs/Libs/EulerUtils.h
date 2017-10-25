@@ -13,8 +13,8 @@ namespace EulerLib {
     /**
      * Tokenize a string (as a line)
      */
-    void Tokenize(std::string& a_rstrLine, 
-                  std::vector<std::string>& a_rvTokens, 
+    void Tokenize(std::string& a_rstrLine,
+                  std::vector<std::string>& a_rvTokens,
                   char a_Delimiter);
 
     /**
@@ -43,22 +43,22 @@ namespace EulerLib {
         return number;
     }
 
-	/**
-	 * Convert to vector.
-	 *
-	 * Type T must implement /= and %=.
-	 *
-	 * @param a_Number     Number to convert into vector of digits
-	 * @param a_rContainer A vector object containing digits
-	 */
-	template<typename T> inline void ToVector(T a_Number, std::vector<uint32_t>& a_rContainer)
-	{
-		while (a_Number > 0)
-		{
-			a_rContainer.push_back(a_Number % 10);
-			a_Number /= 10;
-		}
-	}
+    /**
+     * Convert to vector.
+     *
+     * Type T must implement /= and %=.
+     *
+     * @param a_Number     Number to convert into vector of digits
+     * @param a_rContainer A vector object containing digits
+     */
+    template<typename T> inline void ToVector(T a_Number, std::vector<uint32_t>& a_rContainer)
+    {
+        while (a_Number > 0)
+        {
+            a_rContainer.push_back(a_Number % 10);
+            a_Number /= 10;
+        }
+    }
 
 }
 

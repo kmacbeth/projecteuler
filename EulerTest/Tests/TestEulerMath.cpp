@@ -22,8 +22,8 @@ namespace EulerTest {
         TestPower();
         TestBase10Shifts();
         TestIsTriangularNumber();
-		TestIsPentagonalNumber();
-		TestIsHexagonalNumber();
+        TestIsPentagonalNumber();
+        TestIsHexagonalNumber();
         TestFindCombinations();
 
         return true;
@@ -223,7 +223,7 @@ namespace EulerTest {
 
         // Test pandigital number including digit 0
         assert(IsPandigital(1230, 4, true));
-        
+
         // Test pandigital number including digit 0 at MSB
         assert(IsPandigital( 123, 4, true));
 
@@ -260,7 +260,7 @@ namespace EulerTest {
         // Power of uint32_t
         assert(Power<uint32_t>(2, 31) == 0x80000000);
         assert(Power<uint32_t>(3,  3) == 27);
-        
+
         // Power of uint64_t
         assert(Power<uint64_t>(2, 32) == 0x100000000);
 
@@ -323,55 +323,55 @@ namespace EulerTest {
         std::cout << "... PASS" << std::endl;
     }
 
-	/**
-	* Test IsPentagonalNumber
-	*/
-	void TestEulerMath::TestIsPentagonalNumber()
-	{
-		std::cout << __FUNCTION__;
+    /**
+    * Test IsPentagonalNumber
+    */
+    void TestEulerMath::TestIsPentagonalNumber()
+    {
+        std::cout << __FUNCTION__;
 
-		uint32_t pentagonal[5] = { 1, 5, 12, 22, 35 };
-		uint32_t nonPentagonal[5] = { 2, 7, 14, 30, 100 };
+        uint32_t pentagonal[5] = { 1, 5, 12, 22, 35 };
+        uint32_t nonPentagonal[5] = { 2, 7, 14, 30, 100 };
 
-		// Test pentagonal numbers
-		for (uint32_t n = 0; n < 5; ++n)
-		{
-			assert(IsPentagonalNumber(pentagonal[n]));
-		}
+        // Test pentagonal numbers
+        for (uint32_t n = 0; n < 5; ++n)
+        {
+            assert(IsPentagonalNumber(pentagonal[n]));
+        }
 
-		// Test non pentagonal numbers
-		for (uint32_t n = 0; n < 5; ++n)
-		{
-			assert(!IsPentagonalNumber(nonPentagonal[n]));
-		}
+        // Test non pentagonal numbers
+        for (uint32_t n = 0; n < 5; ++n)
+        {
+            assert(!IsPentagonalNumber(nonPentagonal[n]));
+        }
 
-		std::cout << "... PASS" << std::endl;
-	}
+        std::cout << "... PASS" << std::endl;
+    }
 
-	/**
-	* Test IsHexagonalNumber
-	*/
-	void TestEulerMath::TestIsHexagonalNumber()
-	{
-		std::cout << __FUNCTION__;
+    /**
+    * Test IsHexagonalNumber
+    */
+    void TestEulerMath::TestIsHexagonalNumber()
+    {
+        std::cout << __FUNCTION__;
 
-		uint32_t hexagonal[5] = { 1, 6, 15, 28, 45 };
-		uint32_t nonHexagonal[5] = { 3, 12, 18, 27, 46 };
+        uint32_t hexagonal[5] = { 1, 6, 15, 28, 45 };
+        uint32_t nonHexagonal[5] = { 3, 12, 18, 27, 46 };
 
-		// Test hexagonal numbers
-		for (uint32_t n = 0; n < 5; ++n)
-		{
-			assert(IsHexagonalNumber(hexagonal[n]));
-		}
+        // Test hexagonal numbers
+        for (uint32_t n = 0; n < 5; ++n)
+        {
+            assert(IsHexagonalNumber(hexagonal[n]));
+        }
 
-		// Test non hexagonal numbers
-		for (uint32_t n = 0; n < 5; ++n)
-		{
-			assert(!IsHexagonalNumber(nonHexagonal[n]));
-		}
+        // Test non hexagonal numbers
+        for (uint32_t n = 0; n < 5; ++n)
+        {
+            assert(!IsHexagonalNumber(nonHexagonal[n]));
+        }
 
-		std::cout << "... PASS" << std::endl;
-	}
+        std::cout << "... PASS" << std::endl;
+    }
 
     /**
      * Test k-combinations.

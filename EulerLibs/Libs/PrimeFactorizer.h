@@ -7,9 +7,9 @@ namespace EulerLib {
 
     class PrimeFactorizer {
 
-	public:
+    public:
         struct Factor {
-                
+
             uint64_t m_Base;
             uint32_t m_Exponent;
 
@@ -17,13 +17,13 @@ namespace EulerLib {
             Factor(uint64_t a_Base, uint32_t a_Exponent);
         };
 
-		typedef std::vector<Factor> FactorList;
+        typedef std::vector<Factor> FactorList;
 
     public:
         PrimeFactorizer();
-		    
+
         void operator()(uint64_t a_Number, FactorList& a_rFactorList);
-            
+
     };
 
 }

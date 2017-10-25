@@ -84,7 +84,7 @@ namespace EulerTest {
         std::cout << __FUNCTION__;
 
         // Test simple case
-        assert(Modular::Pow(9, 9, 100) == 89); 
+        assert(Modular::Pow(9, 9, 100) == 89);
 
         // Test case where exponent is zero
         assert(Modular::Pow(3, 0, 2) == 1);

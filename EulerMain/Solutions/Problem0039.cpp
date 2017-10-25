@@ -6,7 +6,7 @@ namespace Euler {
     /**
      * Problem: Integer right triangles
      *
-     * If p is the perimeter of a right angle triangle with integral length 
+     * If p is the perimeter of a right angle triangle with integral length
      * sides, {a,b,c}, there are exactly three solutions for p = 120.
      *
      * {20,48,52}, {24,45,51}, {30,40,50}
@@ -23,10 +23,10 @@ namespace Euler {
         // By simplification:
         //                  b = p(p/2 - a)/(p - a)
         // Using variable substitution n = p(p/2 - a) and m = (p - a),
-        // we only need to satisfy (n mod m) = 0. Since we have a p/2 term, 
+        // we only need to satisfy (n mod m) = 0. Since we have a p/2 term,
         // p must be even.
-		const uint32_t kMaxLimit = 1000;
-		const uint32_t kMinLimit = 2;
+        const uint32_t kMaxLimit = 1000;
+        const uint32_t kMinLimit = 2;
         uint32_t largestNumberSolutions = 0;
 
         for (uint32_t p = kMinLimit; p <= kMaxLimit; p += 2)

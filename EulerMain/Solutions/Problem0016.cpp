@@ -15,14 +15,14 @@ namespace Euler {
     {
         const uint32_t kExponent = 1000;
         const EulerLib::BigInteger kBase(2);
-    
+
         // Compute 2**1000
         EulerLib::BigInteger power = EulerLib::Power(kBase, kExponent);
 
         // Sum all digits
         std::string strNumber = power.ToString();
         size_t strNumberSize = strNumber.size();
-        
+
         uint64_t result = 0;
 
         for(size_t i = 0; i < strNumberSize; ++i)

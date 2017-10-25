@@ -22,11 +22,11 @@ namespace EulerTest {
         DivisorFunction divisorFunction;
         uint64_t divisorCount = 0;
         uint64_t divisorSum = 0;
-        
+
         // Divisor function of 6
         divisorCount = divisorFunction(6, 0);
         divisorSum   = divisorFunction(6, 1);
-        
+
         assert(divisorCount == 4 &&
                "Wrong number of divisors.");
         assert(divisorSum == 12 &&

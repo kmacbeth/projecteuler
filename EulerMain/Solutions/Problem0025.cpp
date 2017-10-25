@@ -26,7 +26,7 @@ namespace Euler {
      * F11 = 89
      * F12 = 144
      * The 12th term, F12, is the first term to contain three digits.
-     * 
+     *
      * What is the index of the first term in the Fibonacci sequence to contain
      * 1000 digits?
      */
@@ -41,11 +41,11 @@ namespace Euler {
         // to check once in a while the number of digit by converging closer to the
         // researched number.
         std::string str1000Digits(1000, '0');
-        
+
         str1000Digits[0] = '1';
 
         EulerLib::BigInteger k1000Digits(str1000Digits);
-        
+
         // Initiate the Fibonacci sequence
         EulerLib::FibonacciSequence<EulerLib::BigInteger> fibonacci(1, 1);
         EulerLib::BigInteger bigFib;

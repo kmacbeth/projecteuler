@@ -21,7 +21,7 @@ def write_problem(path, template, number):
 
 def write_solution(path, number):
     """Write solutions header and cpp files.
-    
+
     TODO: refactor to reuse the function for a single file,
           like the write_problem function.
     """

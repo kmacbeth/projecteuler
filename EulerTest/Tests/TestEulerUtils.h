@@ -17,7 +17,7 @@ namespace EulerTest {
         void TestReadFile();
         void TestTokenize();
         void TestToNumber();
-		void TestToVector();
+        void TestToVector();
     };
 
 }

@@ -12,10 +12,10 @@ namespace EulerLib {
 
     /**
      * Copy constructor.
-     * 
+     *
      * @param a_rOther Reference to the object to copy from.
      */
-	BigInteger::BigInteger(const BigInteger& a_rOther) :
+    BigInteger::BigInteger(const BigInteger& a_rOther) :
         m_vBins(a_rOther.m_vBins)
     {
     }
@@ -60,8 +60,8 @@ namespace EulerLib {
      *
      * @return Copy of the current object.
      */
-	BigInteger BigInteger::operator= (BigInteger a_Other)
-    {       
+    BigInteger BigInteger::operator= (BigInteger a_Other)
+    {
         swap(*this, a_Other);
 
         return *this;
@@ -80,7 +80,7 @@ namespace EulerLib {
         BigInteger bigOther(a_rOther);
         uint32_t   largestSize  = m_vBins.size();
         uint32_t   smallestSize = bigOther.m_vBins.size();
-        
+
         // Just swap the copies to keep the algorithm cleaner
         if (smallestSize > largestSize)
         {
@@ -112,7 +112,7 @@ namespace EulerLib {
         return *this;
     }
 
-	BigInteger& BigInteger::operator-=(const BigInteger& other)
+    BigInteger& BigInteger::operator-=(const BigInteger& other)
     {
         return *this;
     }
@@ -124,12 +124,12 @@ namespace EulerLib {
      *
      * @return Reference to the current BigInteger.
      */
-	BigInteger& BigInteger::operator*=(const BigInteger& a_rOther)
+    BigInteger& BigInteger::operator*=(const BigInteger& a_rOther)
     {
         BigInteger bigOther(a_rOther);
         uint32_t   largestSize  = m_vBins.size();
-        uint32_t   smallestSize = bigOther.m_vBins.size();      
-   
+        uint32_t   smallestSize = bigOther.m_vBins.size();
+
         // multiplicand * multiplier, where multiplicand (m_vBins)is always the larger
         if (smallestSize > largestSize)
         {
@@ -137,7 +137,7 @@ namespace EulerLib {
             std::swap(bigOther.m_vBins, m_vBins);
         }
 
-        /* 
+        /*
          *  This is how we multiply two uint64_t without loosing the bits
          *  past the 64th bit:
          *
@@ -182,7 +182,7 @@ namespace EulerLib {
 
                 vProduct[j + i]     = AddBins(vProduct[j + i],     bd, carry);
                 vProduct[j + i + 1] = AddBins(vProduct[j + i + 1], ac, carry);
-                
+
                 if (carry != 0)
                 {
                     vProduct[j + i + 2] = carry;
@@ -201,7 +201,7 @@ namespace EulerLib {
         return *this;
     }
 
-	BigInteger& BigInteger::operator/=(const BigInteger& other)
+    BigInteger& BigInteger::operator/=(const BigInteger& other)
     {
         return *this;
     }
@@ -218,7 +218,7 @@ namespace EulerLib {
      */
     void BigInteger::FromString(const std::string& a_rStrNumber)
     {
-        // Check whether we have an hexstring number. 
+        // Check whether we have an hexstring number.
         // If it is way faster to process.
         if (a_rStrNumber.substr(0, 2) == "0x")
         {
@@ -308,16 +308,16 @@ namespace EulerLib {
 
         /*
          * Convert from base 10 digit array to binary:
-         * Take last bit and save it. Divide by 2 and repeat until 
+         * Take last bit and save it. Divide by 2 and repeat until
          * number is zero.
          */
         uint64_t bin = 0;
         uint32_t shift = 0;
-    
+
         while (!digits.empty())
         {
             uint64_t firstDigit = static_cast<uint64_t>(digits.front());
-            
+
             // Check we've reached 64 bit shifts
             if ((shift & 0x40) == 0x40)
             {
@@ -325,7 +325,7 @@ namespace EulerLib {
                 shift = 0;
                 bin = 0;
             }
-            
+
             // Check first bit and move to bin
             bin |= (firstDigit & 0x1) << shift++;
 
@@ -333,7 +333,7 @@ namespace EulerLib {
             std::vector<uint32_t> reminders(digits);
 
             std::fill(digits.begin(), digits.end(), 0ul);
-            
+
             while (!reminders.empty())
             {
                 bool isNonZero = false;
@@ -345,9 +345,9 @@ namespace EulerLib {
 
                     digits[i] += quotient;
                     reminders[i] = reminders[i] - (quotient << 1);
-                    
+
                     // Check when reminders are all zeros
-                    isNonZero |= !!reminders[i]; 
+                    isNonZero |= !!reminders[i];
                 }
 
                 // Check for early exit when all remainders are zero,
@@ -394,14 +394,14 @@ namespace EulerLib {
         for (uint32_t i = 0; i < numHexChunk; ++i)
         {
             uint32_t curChunkSize = remStrSize < 8 ? remStrSize : 8;
-   
+
             // The string is walked backward from the end, a chuck is 8 characters (DWORD)
             // or less at the end of the number:
             //    remStrSize + 2 -> Sets us at the end of the chunk
             //    - curChunkSize -> Sets us at the start of the chunk
             std::string chunk = a_rStrNumber.substr(remStrSize + 2 - curChunkSize, curChunkSize);
 
-            // Split into 2 32-bit chunks (VS2012 does not not support strtoull) 
+            // Split into 2 32-bit chunks (VS2012 does not not support strtoull)
             if ((i & 0x1) == 0x1)
             {
                 bin |= static_cast<uint64_t>(std::strtoul(chunk.c_str(), NULL, 16)) << 32;
@@ -436,7 +436,7 @@ namespace EulerLib {
         uint64_t dwLower = (a_BinLhs & 0xFFFFFFFF) + (a_BinRhs & 0xFFFFFFFF) + a_rCarry;
         // Carry over from lower DWORD to upper DWORD
         uint64_t dwUpper = (a_BinLhs >> 32) + (a_BinRhs >> 32) + (dwLower >> 32);
-        
+
         // Keep any carry over the upper DWORD
         a_rCarry = dwUpper >> 32;
 
@@ -487,7 +487,7 @@ namespace EulerLib {
                 return false;
             }
         }
-         
+
         return false;
     }
 
@@ -517,7 +517,7 @@ namespace EulerLib {
                 return false;
             }
         }
-         
+
         // Both numbers are equal
         return true;
     }
@@ -534,6 +534,6 @@ namespace EulerLib {
     {
         a_rStream << a_rBigNumber.ToString();
 
-	    return a_rStream;
+        return a_rStream;
     }
 }

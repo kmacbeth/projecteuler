@@ -9,7 +9,7 @@ namespace EulerLib {
 
     public:
         typedef std::vector<uint32_t> Primes;
-        
+
         virtual void operator()(Primes& a_rPrimes, size_t a_Limit) = 0;
     };
 

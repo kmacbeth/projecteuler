@@ -51,10 +51,10 @@ namespace EulerTest {
         std::cout << __FUNCTION__;
 
         // Find all primes below 100, delta = 32768 will force erathostene
-        EratosthenesSieve eraSieve;  
+        EratosthenesSieve eraSieve;
         PrimeSieve::Primes vPrimes;
 
-        eraSieve(vPrimes, 100);   
+        eraSieve(vPrimes, 100);
 
         assert(vPrimes.size() == 25);
 
@@ -78,7 +78,7 @@ namespace EulerTest {
         // Find all primes below 1000, delta = 11 will force segmentation
         EratosthenesSieve segSieve(11);
 
-        segSieve(vPrimes, 1000);  
+        segSieve(vPrimes, 1000);
 
         assert(vPrimes.size() == 168);
 
@@ -90,7 +90,7 @@ namespace EulerTest {
         // Find all primes below 1060
         EratosthenesSieve bugSieve(11);
 
-        bugSieve(vPrimes, 1060); 
+        bugSieve(vPrimes, 1060);
 
         assert(vPrimes.size() == 177);
 
@@ -125,7 +125,7 @@ namespace EulerTest {
 
         // Test sqrt(n) = delta for delta is prime
         EratosthenesSieve sieve2(13);
-   
+
         sieve2(vPrimes, 169);
 
         assert(vPrimes.size() == 39);

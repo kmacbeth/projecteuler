@@ -15,7 +15,7 @@ namespace EulerTest {
 
         return true;
     }
-    
+
     void TestPrimeFactorizer::TestFactorization()
     {
         std::cout << __FUNCTION__ << std::endl;

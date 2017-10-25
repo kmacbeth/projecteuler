@@ -4,9 +4,9 @@
 namespace Euler {
 
     /**
-     * Problem: Largest palindrome product 
+     * Problem: Largest palindrome product
      *
-     * A palindromic number reads the same both ways. The largest palindrome made 
+     * A palindromic number reads the same both ways. The largest palindrome made
      * from the product of two 2-digit numbers is 9009 = 91 × 99.
      *
      * Find the largest palindrome made from the product of two 3-digit numbers.
@@ -23,7 +23,7 @@ namespace Euler {
 
         // Search the greatest palindrom factors below 1,000,000.
         for (uint32_t n = kUpperBound; n >= kLowerBound && !bFound; --n)
-        {       
+        {
             if (EulerLib::IsPalindromic(n, 10))
             {
                 for (uint32_t a = kHigh; a >= kLow && !bFound; --a)

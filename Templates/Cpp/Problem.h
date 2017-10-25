@@ -10,7 +10,7 @@ namespace Euler {
 
     public:
         Problem{_number_}() : Problem("Problem {_number_}") {}
-        
+
         void Solve();
 
     };

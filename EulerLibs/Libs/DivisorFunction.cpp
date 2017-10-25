@@ -5,13 +5,13 @@
 namespace EulerLib {
 
     /**
-     * The divisor function. 
-     * 
+     * The divisor function.
+     *
      * The zeroth power compute the number of divisors.
      * The forst power compute the sum of the of all positive divisor.
      * Others powers are not computed and return zero.
      *
-     * Example: 
+     * Example:
      *    Sigma(6, 0) = 4 = (1 + 1)(1 + 1);
      *    Sigma(6, 1) = 1 + 2 + 3 + 6 = sigma(2**1) * sigma(3**1)
      *
@@ -25,7 +25,7 @@ namespace EulerLib {
         // Find prime factorization of number
         PrimeFactorizer::FactorList factors;
         PrimeFactorizer factorize;
-        
+
         factorize(a_Number, factors);
 
         // Reference: http://mathschallenge.net/library/number/sum_of_divisors
@@ -33,7 +33,7 @@ namespace EulerLib {
 
         if (a_KthPower == 1)
         {
-            uint64_t divisorSum = 1; 
+            uint64_t divisorSum = 1;
 
             for (uint32_t i = 0; i < numFactors; ++i)
             {

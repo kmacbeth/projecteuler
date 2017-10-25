@@ -4,7 +4,7 @@
 /**
  * Default constructor.
  */
-TestApp::TestApp() : 
+TestApp::TestApp() :
     m_AppName("Test"),
     m_TestName("all"),
     m_eTestType(E_UNITTEST)
@@ -17,20 +17,20 @@ TestApp::TestApp() :
  */
 TestApp::~TestApp()
 {
-	TestDict::iterator unitIt = m_pUnitTestLookup.begin();
+    TestDict::iterator unitIt = m_pUnitTestLookup.begin();
 
-	for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
-	{
-		delete unitIt->second;
-	}
+    for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
+    {
+        delete unitIt->second;
+    }
     m_pUnitTestLookup.clear();
 
-	TestDict::iterator perfIt = m_pPerfTestLookup.begin();
+    TestDict::iterator perfIt = m_pPerfTestLookup.begin();
 
-	for (; perfIt != m_pPerfTestLookup.end(); ++perfIt)
-	{
-		delete perfIt->second;
-	}
+    for (; perfIt != m_pPerfTestLookup.end(); ++perfIt)
+    {
+        delete perfIt->second;
+    }
     m_pPerfTestLookup.clear();
 }
 
@@ -43,67 +43,67 @@ TestApp::~TestApp()
  */
 bool TestApp::ParseArgs(TCmdLine& a_rCmdLine)
 {
-	// Check for actual arguments to parse
-	if (a_rCmdLine.size() > 1)
-	{
-		// Remove executable name
-		a_rCmdLine.pop_front();
+    // Check for actual arguments to parse
+    if (a_rCmdLine.size() > 1)
+    {
+        // Remove executable name
+        a_rCmdLine.pop_front();
 
-		while (!a_rCmdLine.empty())
-		{
-			std::string option(a_rCmdLine.front());
-			a_rCmdLine.pop_front();
+        while (!a_rCmdLine.empty())
+        {
+            std::string option(a_rCmdLine.front());
+            a_rCmdLine.pop_front();
 
-			if (option == "-h" || option == "--help")
-			{
-				return DisplayHelp();
-			}
+            if (option == "-h" || option == "--help")
+            {
+                return DisplayHelp();
+            }
 
-			if (option == "-t" || option == "--test")
-			{
-				if (a_rCmdLine.empty())
-				{
-					std::cerr << "[ERROR] Option -t/--test must have an argument. "
-						<< "Try --help" << std::endl;
-					return false;
-				}
+            if (option == "-t" || option == "--test")
+            {
+                if (a_rCmdLine.empty())
+                {
+                    std::cerr << "[ERROR] Option -t/--test must have an argument. "
+                        << "Try --help" << std::endl;
+                    return false;
+                }
 
-				std::string value(a_rCmdLine.front());
-				a_rCmdLine.pop_front();
+                std::string value(a_rCmdLine.front());
+                a_rCmdLine.pop_front();
 
-				if (value == "PERF")
-				{
-					m_eTestType = E_PERFTEST;
-				}
-				else if (value == "UNIT")
-				{
-					m_eTestType = E_UNITTEST;
-				}
-				else
-				{
-					m_eTestType = E_NULLTEST;
-				}
-			}
-			else if (option == "-n" || option == "--name")
-			{
-				if (a_rCmdLine.empty())
-				{
-					std::cerr << "[ERROR] Option -n/--name must have an argument. "
-						<< "Try --help" << std::endl;
-					return false;
-				}
+                if (value == "PERF")
+                {
+                    m_eTestType = E_PERFTEST;
+                }
+                else if (value == "UNIT")
+                {
+                    m_eTestType = E_UNITTEST;
+                }
+                else
+                {
+                    m_eTestType = E_NULLTEST;
+                }
+            }
+            else if (option == "-n" || option == "--name")
+            {
+                if (a_rCmdLine.empty())
+                {
+                    std::cerr << "[ERROR] Option -n/--name must have an argument. "
+                        << "Try --help" << std::endl;
+                    return false;
+                }
 
-				m_TestName = std::string(a_rCmdLine.front());
-				a_rCmdLine.pop_front();
-			}
-			else if (option == "-l" || option == "--list")
-			{
-				return DisplayTestName();
-			}
-		}
-	}
+                m_TestName = std::string(a_rCmdLine.front());
+                a_rCmdLine.pop_front();
+            }
+            else if (option == "-l" || option == "--list")
+            {
+                return DisplayTestName();
+            }
+        }
+    }
 
-	return SanitityCheckArgs();
+    return SanitityCheckArgs();
 }
 
 /**
@@ -157,7 +157,7 @@ bool TestApp::Run()
     if (m_eTestType == E_PERFTEST)
     {
         // Call the performance test required
-		std::cout << "[INFO] Running test: " << m_TestName << std::endl;
+        std::cout << "[INFO] Running test: " << m_TestName << std::endl;
         m_pPerfTestLookup[m_TestName]->Run();
     }
     else
@@ -166,20 +166,20 @@ bool TestApp::Run()
         EulerLib::Timer timer;
 
         timer.Start();
-            
+
         // Run unit test(s).
         if (m_TestName == "all")
         {
-			TestDict::const_iterator unitIt = m_pUnitTestLookup.begin();
-			
-			for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
-			{
-				unitIt->second->Run();
-			}
+            TestDict::const_iterator unitIt = m_pUnitTestLookup.begin();
+
+            for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
+            {
+                unitIt->second->Run();
+            }
         }
         else
         {
-			std::cout << "[INFO] Running test: " << m_TestName << std::endl;
+            std::cout << "[INFO] Running test: " << m_TestName << std::endl;
             m_pUnitTestLookup[m_TestName]->Run();
         }
 
@@ -233,7 +233,7 @@ void TestApp::InitializePerfTest(TestCase * a_pTestCase)
 
 /**
  * Display help text.
- * 
+ *
  * @return Always false to prevent further execution.
  */
 bool TestApp::DisplayHelp()
@@ -262,30 +262,30 @@ bool TestApp::DisplayHelp()
 
 /**
  * Display a list of all tests name.
- * 
+ *
  * @return Always false to prevent further execution.
  */
 bool TestApp::DisplayTestName()
 {
     std::cout << "Unit tests: " << std::endl;
-        
-	TestDict::const_iterator unitIt = m_pUnitTestLookup.begin();
 
-	for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
-	{
-		std::cout << "  - " << unitIt->second->GetTestName() << std::endl;
-	}
+    TestDict::const_iterator unitIt = m_pUnitTestLookup.begin();
+
+    for (; unitIt != m_pUnitTestLookup.end(); ++unitIt)
+    {
+        std::cout << "  - " << unitIt->second->GetTestName() << std::endl;
+    }
 
     std::cout << std::endl;
 
     std::cout << "Performance tests: " << std::endl;
 
-	TestDict::const_iterator perfIt = m_pPerfTestLookup.begin();
+    TestDict::const_iterator perfIt = m_pPerfTestLookup.begin();
 
-	for (; perfIt != m_pPerfTestLookup.end(); ++perfIt)
-	{
-		std::cout << "  - " << perfIt->second->GetTestName() << std::endl;
-	}
+    for (; perfIt != m_pPerfTestLookup.end(); ++perfIt)
+    {
+        std::cout << "  - " << perfIt->second->GetTestName() << std::endl;
+    }
 
     return false;
 }

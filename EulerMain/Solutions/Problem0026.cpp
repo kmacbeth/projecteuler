@@ -5,23 +5,23 @@ namespace Euler {
     /**
      * Problem: Reciprocal cycles
      *
-     * A unit fraction contains 1 in the numerator. The decimal representation 
+     * A unit fraction contains 1 in the numerator. The decimal representation
      * of the unit fractions with denominators 2 to 10 are given:
      *
-     *     1/2	= 	0.5
-     *     1/3	= 	0.(3)
-     *     1/4	= 	0.25
-     *     1/5	= 	0.2
-     *     1/6	= 	0.1(6)
-     *     1/7	= 	0.(142857)
-     *     1/8	= 	0.125
-     *     1/9	= 	0.(1)
-     *     1/10	= 	0.1
+     *     1/2  =   0.5
+     *     1/3  =   0.(3)
+     *     1/4  =   0.25
+     *     1/5  =   0.2
+     *     1/6  =   0.1(6)
+     *     1/7  =   0.(142857)
+     *     1/8  =   0.125
+     *     1/9  =   0.(1)
+     *     1/10 =   0.1
      *
      * Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can
      * be seen that 1/7 has a 6-digit recurring cycle.
      *
-     * Find the value of d < 1000 for which 1/d contains the longest recurring 
+     * Find the value of d < 1000 for which 1/d contains the longest recurring
      * cycle in its decimal fraction part.
      */
     void Problem26::Solve()
@@ -33,8 +33,8 @@ namespace Euler {
         // Cycle length always smaller than number value
         for (uint32_t number = 999; number > 1; --number)
         {
-            // So, if we reached the number with less than or equal to the 
-            // greatest cycle length, we know we have previously found the 
+            // So, if we reached the number with less than or equal to the
+            // greatest cycle length, we know we have previously found the
             // greatest cycle.
             if (number <= maxCycleLength)
             {
@@ -57,17 +57,17 @@ namespace Euler {
             {
                 vRemainders[remainder] = position;
                 remainder *= 10;
-                remainder %= number;                             
+                remainder %= number;
                 ++position;
             }
-    
+
             // We encounter the remainder again, we compute the cycle
             // by subtracting this remainder last position from the
             // current one.
             uint32_t cycleLength = position - vRemainders[remainder];
 
             if (cycleLength > maxCycleLength)
-            {               
+            {
                 maxCycleLength = cycleLength;
             }
         }

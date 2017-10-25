@@ -33,13 +33,13 @@ namespace Euler {
         // We can generate permutations from 0123456789 and check
         // for divisibility for these prime numbers.
         const uint32_t kInitPermutation[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		const uint32_t kNumDigits = sizeof(kInitPermutation) / sizeof(kInitPermutation[0]);
-        
+        const uint32_t kNumDigits = sizeof(kInitPermutation) / sizeof(kInitPermutation[0]);
+
         EulerLib::LexicographicPermutator permute;
         std::vector<uint32_t> vPermutation(kInitPermutation, kInitPermutation + kNumDigits);
 
-		const uint32_t kPrimes[] = { 2, 3, 5, 7, 11, 13, 17 };
-		const uint32_t kPrimesSize = sizeof(kPrimes) / sizeof(kPrimes[0]);
+        const uint32_t kPrimes[] = { 2, 3, 5, 7, 11, 13, 17 };
+        const uint32_t kPrimesSize = sizeof(kPrimes) / sizeof(kPrimes[0]);
 
         while (permute(vPermutation))
         {
@@ -47,7 +47,7 @@ namespace Euler {
 
             for (uint32_t i = 0; i < kPrimesSize && bIsDivisible; ++i)
             {
-				// A 3-digit window to test primality
+                // A 3-digit window to test primality
                 uint32_t n = vPermutation[i + 1] * 100 + vPermutation[i + 2] * 10 + vPermutation[i + 3];
 
                 if (n % kPrimes[i] != 0)

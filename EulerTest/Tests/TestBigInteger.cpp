@@ -38,7 +38,7 @@ namespace EulerTest {
         // Test default constructor
         BigInteger bigDefault;
 
-        assert(bigDefault.m_vBins.size() == 0 && 
+        assert(bigDefault.m_vBins.size() == 0 &&
                "Default constructor should produce zero size.");
 
         // Test copy constructor
@@ -46,11 +46,11 @@ namespace EulerTest {
         bigDefault.m_vBins.push_back(1);
         BigInteger bigCopy(bigDefault);
 
-        assert(bigCopy.m_vBins.size() == bigDefault.m_vBins.size() && 
+        assert(bigCopy.m_vBins.size() == bigDefault.m_vBins.size() &&
                "Copy constructor should produce BigInteger that have same size.");
-        assert(bigCopy.m_vBins[0] == bigCopy.m_vBins[0] && 
+        assert(bigCopy.m_vBins[0] == bigCopy.m_vBins[0] &&
                "Copy constructor should copy the same values.");
-        assert(bigCopy.m_vBins[1] == bigCopy.m_vBins[1] && 
+        assert(bigCopy.m_vBins[1] == bigCopy.m_vBins[1] &&
                "Copy constructor should copy the same values.");
 
         // Test specialized constructor for unsigned integers.
@@ -59,12 +59,12 @@ namespace EulerTest {
 
         assert(bigUnsignedLongLong.m_vBins.size() == 1 &&
                "A 64-bit unsigned integer should only use one location.");
-        assert(bigUnsignedLongLong.m_vBins[0] == 0xFFFFFFFFFFFFFFFFull && 
+        assert(bigUnsignedLongLong.m_vBins[0] == 0xFFFFFFFFFFFFFFFFull &&
                "Value differs");
 
         assert(bigUnsignedLong.m_vBins.size() == 1 &&
                "A 32-bit unsigned integer should only use one location.");
-        assert(bigUnsignedLong.m_vBins[0] == 0xFFFFFFFFull && 
+        assert(bigUnsignedLong.m_vBins[0] == 0xFFFFFFFFull &&
                "Value differs");
 
         // Test unsigned integer constructor with signed integer
@@ -72,13 +72,13 @@ namespace EulerTest {
 
         assert(bigSignedLongLong.m_vBins.size() == 1 &&
                "A 64-bit signed integer should be convert to an unsigned integer with one location.");
-        assert(bigSignedLongLong.m_vBins[0] == 0xFFFFFFFFFFFFFFFFull && 
+        assert(bigSignedLongLong.m_vBins[0] == 0xFFFFFFFFFFFFFFFFull &&
                "Value differs");
 
         // Test specialized construtor using a small string number (315).
         std::string strNumber = "315";
         BigInteger bigSmallString(strNumber);
-        
+
         assert(bigSmallString.m_vBins.size() == 1 &&
                "A 3-digit number should use exactly one location.");
         assert(bigSmallString.m_vBins[0] == 315ull &&
@@ -95,11 +95,11 @@ namespace EulerTest {
         assert(bigLargeString.m_vBins[1] == 0x1ull &&
                "Value differs.");
 
-        // Test specialized construtor using a small string number with 
+        // Test specialized construtor using a small string number with
         // invalid character (31Z15). Such characters are converted to zero.
         std::string strBadNumber = "31%15";
         BigInteger bigBadString(strBadNumber);
-        
+
         assert(bigBadString.m_vBins.size() == 1 &&
                "A 3-digit number should use exactly one location.");
         assert(bigBadString.m_vBins[0] == 31015ull &&
@@ -217,7 +217,7 @@ namespace EulerTest {
         BigInteger b(0xFFFFFFFFFFFFFFFFull);
 
         // Test basic cases without all coverage
-        assert(a < b && 
+        assert(a < b &&
                "a is not greater than b");
         assert(!(b < a) &&
                "b is not smaller than a");
@@ -232,7 +232,7 @@ namespace EulerTest {
         BigInteger w("36893488147419103229");
 
         // Size of bins will differ, returning true
-        assert(x < y && 
+        assert(x < y &&
                "x is not greater than y");
         // Size of bins will differ, returning false
         assert(!(y < x) &&
@@ -263,7 +263,7 @@ namespace EulerTest {
         BigInteger b(0xFFFFFFFFFFFFFFFFull);
 
         // Test basic cases without all coverage
-        assert(b > a && 
+        assert(b > a &&
                "b is not smaller than a");
         assert(!(a > b) &&
                "a is not smaller than b");
@@ -278,7 +278,7 @@ namespace EulerTest {
         BigInteger w("36893488147419103229");
 
         // Size of bins will differ, returning true
-        assert(y > x && 
+        assert(y > x &&
                "y is not smaller than x");
         // Size of bins will differ, returning false
         assert(!(x > y) &&
@@ -309,7 +309,7 @@ namespace EulerTest {
         BigInteger b(0xFFFFFFFFFFFFFFFFull);
 
         // Test basic cases without all coverage
-        assert(a <= b && 
+        assert(a <= b &&
                "a is not greater than b");
         assert(!(b <= a) &&
                "b is not smaller than a");
@@ -324,7 +324,7 @@ namespace EulerTest {
         BigInteger w("36893488147419103229");
 
         // Size of bins will differ, returning true
-        assert(x <= y && 
+        assert(x <= y &&
                "x is not greater than y");
         // Size of bins will differ, returning false
         assert(!(y <= x) &&
@@ -355,7 +355,7 @@ namespace EulerTest {
         BigInteger b(0xFFFFFFFFFFFFFFFFull);
 
         // Test basic cases without all coverage
-        assert(b >= a && 
+        assert(b >= a &&
                "b is not smaller than a");
         assert(!(a >= b) &&
                "a is not smaller than b");
@@ -370,7 +370,7 @@ namespace EulerTest {
         BigInteger w("36893488147419103229");
 
         // Size of bins will differ, returning true
-        assert(y >= x && 
+        assert(y >= x &&
                "y is not smaller than x");
         // Size of bins will differ, returning false
         assert(!(x >= y) &&
@@ -401,7 +401,7 @@ namespace EulerTest {
        BigInteger c("0x1FFFFFFFFFFFFFFFE");
        BigInteger d("0x1FFFFFFFFFFFFFFF1");
 
-       assert(a == a && 
+       assert(a == a &&
               "a does not equal a (1 bin)");
        assert(c == c &&
               "c does not equal c (2 bins)");
@@ -428,7 +428,7 @@ namespace EulerTest {
        BigInteger c("0x1FFFFFFFFFFFFFFFE");
        BigInteger d("0x1FFFFFFFFFFFFFFF1");
 
-       assert(!(a != a) && 
+       assert(!(a != a) &&
               "a does not equal a (1 bin)");
        assert(!(c != c) &&
               "c does not equal c (2 bins)");
@@ -448,7 +448,7 @@ namespace EulerTest {
     void TestBigInteger::TestAddBins()
     {
         std::cout << __FUNCTION__;
-        
+
         BigInteger bigNumber;
         uint64_t number = 0;
         uint64_t carry = 0;
@@ -598,7 +598,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "5555" && 
+        assert(strNumber == "5555" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 1 &&
                "Wrong number of bins.");
@@ -610,7 +610,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "36893488147419103230" && 
+        assert(strNumber == "36893488147419103230" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 2 &&
                "Wrong number of bins.");
@@ -622,7 +622,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "73786976294838206462" && 
+        assert(strNumber == "73786976294838206462" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 2 &&
                "Wrong number of bins.");
@@ -634,7 +634,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "680564733841876926871408982642407768065" && 
+        assert(strNumber == "680564733841876926871408982642407768065" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 3 &&
                "Wrong number of bins.");
@@ -646,7 +646,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "1361129467683753853779711453432234639361" && 
+        assert(strNumber == "1361129467683753853779711453432234639361" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 3 &&
                "Wrong number of bins.");
@@ -658,7 +658,7 @@ namespace EulerTest {
         bigNumber1 *= bigNumber2;
         strNumber = bigNumber1.ToString();
 
-        assert(strNumber == "115792089237316195423570985008687907852589419931798687112530834793049593217025" && 
+        assert(strNumber == "115792089237316195423570985008687907852589419931798687112530834793049593217025" &&
                "Number is wrong.");
         assert(bigNumber1.m_vBins.size() == 4 &&
                "Wrong number of bins.");

@@ -24,10 +24,10 @@ namespace EulerTest {
         std::cout << __FUNCTION__;
 
         uint32_t testVector[] = { 1, 2, 3, 4, 5 };
-        
+
         LexicographicPermutator permute;
         std::vector<uint32_t> vPermutation(testVector, testVector + 5);
-        
+
         // We have 120 possibilities, start with fifth
         for (uint32_t i = 0; i < 5; ++i)
         {

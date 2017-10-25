@@ -48,7 +48,7 @@ namespace EulerLib {
         // Sieve only odd number
         Sieve  bvSieve(a_Limit / 2 + (a_Limit & 0x1), true);
         size_t limitOdd = a_Limit - (a_Limit & 0x1 ? 0 : 1);
-    
+
         for(uint32_t i = 1, p = 2 * i + 1; p * p <= limitOdd; ++i, p += 2)
         {
             if(bvSieve[i])
@@ -83,13 +83,13 @@ namespace EulerLib {
      */
     void EratosthenesSieve::ComputeSegmentedSieve(Primes& a_rPrimes)
     {
-        // Compute prime number from [2, sqrt(n)]   
+        // Compute prime number from [2, sqrt(n)]
         ComputeOptimizedEraSieve(a_rPrimes, m_SqrtLimit);
 
         size_t maxSievingPrime = a_rPrimes.size();
 
         // Compute segments
-        size_t segmentSize = (m_Delta < m_SqrtLimit ? m_Delta : m_SqrtLimit);   
+        size_t segmentSize = (m_Delta < m_SqrtLimit ? m_Delta : m_SqrtLimit);
 
         for(uint32_t lowBound = m_SqrtLimit; lowBound < m_Limit; lowBound += segmentSize)
         {
@@ -100,7 +100,7 @@ namespace EulerLib {
             {
                 // Get sieving prime and align on the segment first multiple of prime
                 uint32_t prime  = a_rPrimes[p];
-                uint32_t number = (lowBound / prime * prime) + 
+                uint32_t number = (lowBound / prime * prime) +
                                   (lowBound % prime != 0 ? prime : 0 );
 
                 // For each multiple of prime in segment mark as composite

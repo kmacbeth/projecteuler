@@ -8,7 +8,7 @@ namespace Euler {
      *
      * 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
      *
-     * Find the sum of all numbers which are equal to the sum of the 
+     * Find the sum of all numbers which are equal to the sum of the
      * factorial of their digits.
      *
      * Note: as 1! = 1 and 2! = 2 are not sums they are not included.
@@ -46,7 +46,7 @@ namespace Euler {
 
         // Computing the factorial of is an expensive operator as for n! we
         // need to do (n - 1) multiply operations. We will only need
-        // factorial up to 9!, we need to compute combinations of n! for 
+        // factorial up to 9!, we need to compute combinations of n! for
         // n = {1, 2, 3, ..., 9} for around 1999999 numbers, which will require
         // between 2 to 7 factorials per numbers based on the digit value.
         // Since it requires a huge amount of factorial, we can precomputed
@@ -61,7 +61,7 @@ namespace Euler {
         {
             factorials[f] = factorials[f-1] * f;
         }
-    
+
         // Compute the factorion for each numbers.
         for (uint32_t number = kLowerBound; number <= kUpperBound; ++number)
         {

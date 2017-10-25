@@ -15,7 +15,7 @@ namespace EulerTest {
 
     private:
         void TestFactorization();
-        void TestPerformance();       
+        void TestPerformance();
     };
 
     class PerfPrimeFactorizer : public TestCase {
@@ -27,7 +27,7 @@ namespace EulerTest {
         bool Run();
 
     private:
-        void TestPerformance();       
+        void TestPerformance();
     };
 }
 

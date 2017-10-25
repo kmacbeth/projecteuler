@@ -2,7 +2,7 @@
 
 namespace Euler {
 
-    
+
 
     /**
      * Problem: Counting Sundays
@@ -11,16 +11,16 @@ namespace Euler {
      * research for yourself.
      *
      * - 1 Jan 1900 was a Monday.
-     * - Thirty days has September, 
+     * - Thirty days has September,
      *   April, June and November.
-     *   All the rest have thirty-one, 
+     *   All the rest have thirty-one,
      *   Saving February alone,
      *   Which has twenty-eight, rain or shine.
      *   And on leap years, twenty-nine.
      * - A leap year occurs on any year evenly divisible by 4, but not on a century
      *   unless it is divisible by 400.
      *
-     *   How many Sundays fell on the first of the month during the twentieth 
+     *   How many Sundays fell on the first of the month during the twentieth
      *   century (1 Jan 1901 to 31 Dec 2000)?
      */
     void Problem19::Solve()
@@ -45,12 +45,12 @@ namespace Euler {
         const uint32_t kLeap4Years = 4;
         const uint32_t kLeap400Years = 400;
         const uint32_t kNoLeap100Years = 100;
-        
+
         std::vector<uint8_t> leapYears(endingYear + startingYear - 1, 0);
-    
+
         for (uint32_t year = startingYear; year <= endingYear; ++year)
         {
-            if ((year % kLeap400Years == 0) || 
+            if ((year % kLeap400Years == 0) ||
                 (year % kLeap4Years == 0 && year % kNoLeap100Years != 0))
             {
                 leapYears[year - startingYear] = 1;

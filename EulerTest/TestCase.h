@@ -19,7 +19,7 @@ public:
 protected:
     TestCase(const char * a_ptestName) : m_TestName(a_ptestName)
     {}
-    
+
     std::string m_TestName;
 };
 

@@ -18,8 +18,8 @@ namespace EulerLib {
      *
      * @note For the moment, only unsigned numbers are supported
      */
-	class BigInteger {
-    
+    class BigInteger {
+
     public:
         friend void swap(BigInteger& a_rLhs, BigInteger& a_rRhs);
 
@@ -29,22 +29,22 @@ namespace EulerLib {
 
         friend class EulerTest::TestBigInteger;
 
-    public:      
+    public:
 
         BigInteger();
         BigInteger(uint64_t a_Number);
         BigInteger(const std::string& a_rStrNumber);
-		BigInteger(const BigInteger& a_rOther);
+        BigInteger(const BigInteger& a_rOther);
 
         ~BigInteger();
 
-		// Reference: http://stackoverflow.com/questions/4421706/operator-overloading/4421729
-		BigInteger operator= (BigInteger a_Other);
+        // Reference: http://stackoverflow.com/questions/4421706/operator-overloading/4421729
+        BigInteger operator= (BigInteger a_Other);
 
-		BigInteger& operator+=(const BigInteger& a_rOther);
-		BigInteger& operator-=(const BigInteger& a_rOther);
-		BigInteger& operator*=(const BigInteger& a_rOther);
-		BigInteger& operator/=(const BigInteger& a_rOther);
+        BigInteger& operator+=(const BigInteger& a_rOther);
+        BigInteger& operator-=(const BigInteger& a_rOther);
+        BigInteger& operator*=(const BigInteger& a_rOther);
+        BigInteger& operator/=(const BigInteger& a_rOther);
         BigInteger& operator%=(const BigInteger& a_rOther);
 
         void FromString(const std::string& a_rStrNumber);
@@ -53,14 +53,14 @@ namespace EulerLib {
     private:
         typedef std::vector<uint64_t> BinVector;
 
-	private:
+    private:
         void FromDecString(const std::string& a_rStrNumber);
         void FromHexString(const std::string& a_rStrNumber);
 
         uint64_t AddBins(uint64_t a_BinLeft, uint64_t a_BinRight, uint64_t& a_rCarry);
 
         BinVector m_vBins;
-	};
+    };
 
     /**
      * Operator greater than.
@@ -114,29 +114,29 @@ namespace EulerLib {
         return !operator==(a_rLhs, a_rRhs);
     }
 
-	inline BigInteger operator+ (BigInteger a_Lhs, const BigInteger& a_rRhs)
-	{
-		a_Lhs += a_rRhs;
-		return a_Lhs;
-	}
+    inline BigInteger operator+ (BigInteger a_Lhs, const BigInteger& a_rRhs)
+    {
+        a_Lhs += a_rRhs;
+        return a_Lhs;
+    }
 
-	inline BigInteger operator- (BigInteger a_Lhs, const BigInteger& a_rRhs)
-	{
-		a_Lhs -= a_rRhs;
-		return a_Lhs;
-	}
+    inline BigInteger operator- (BigInteger a_Lhs, const BigInteger& a_rRhs)
+    {
+        a_Lhs -= a_rRhs;
+        return a_Lhs;
+    }
 
-	inline BigInteger operator* (BigInteger a_Lhs, const BigInteger& a_rRhs)
-	{
-		a_Lhs *= a_rRhs;
-		return a_Lhs;
-	}
+    inline BigInteger operator* (BigInteger a_Lhs, const BigInteger& a_rRhs)
+    {
+        a_Lhs *= a_rRhs;
+        return a_Lhs;
+    }
 
-	inline BigInteger operator/ (BigInteger a_Lhs, const BigInteger& a_rRhs)
-	{
-		a_Lhs /= a_rRhs;
-		return a_Lhs;
-	}
+    inline BigInteger operator/ (BigInteger a_Lhs, const BigInteger& a_rRhs)
+    {
+        a_Lhs /= a_rRhs;
+        return a_Lhs;
+    }
 
 }
 

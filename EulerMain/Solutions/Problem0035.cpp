@@ -7,7 +7,7 @@ namespace Euler {
     /**
      * Problem: Circular primes
      *
-     * The number, 197, is called a circular prime because all rotations of 
+     * The number, 197, is called a circular prime because all rotations of
      * the digits: 197, 971, and 719, are themselves prime.
      *
      * There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31,
@@ -18,7 +18,7 @@ namespace Euler {
     void Problem35::Solve()
     {
         // Circular primes below one million
-        const size_t kNumPrimes = 1000000; 
+        const size_t kNumPrimes = 1000000;
         uint32_t result = 0;
 
         // Generate all primes below 1 millions using a sieve
@@ -43,7 +43,7 @@ namespace Euler {
             {
                 number = EulerLib::Rotate(number, 1, digitCount);
 
-				if (sPrimes.find(number) == sPrimes.end())
+                if (sPrimes.find(number) == sPrimes.end())
                 {
                     bIsCircularPrime = false;
                 }

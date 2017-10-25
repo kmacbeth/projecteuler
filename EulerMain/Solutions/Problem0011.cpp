@@ -5,7 +5,7 @@ namespace Euler {
     /**
      * Problem: Largest product in a grid
      *
-     * In the 20×20 grid below, four numbers along a diagonal line have been 
+     * In the 20×20 grid below, four numbers along a diagonal line have been
      * marked in red.
      *
      *      08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -67,10 +67,10 @@ namespace Euler {
         Directions directions(kLength);
 
         // At this max, all combinations will be covered.
-        const uint32_t kSearchMax = kGridWidth * (kGridHeight - 4); 
+        const uint32_t kSearchMax = kGridWidth * (kGridHeight - 4);
 
 
-        // Compute the 4 directions, the line scan make sure combination from the 
+        // Compute the 4 directions, the line scan make sure combination from the
         // other 4 directions were already tested.
         //
         // Basically testing these directions in the cartesian plane:
@@ -83,11 +83,11 @@ namespace Euler {
         //
         for(size_t i = 0; i < directions.size(); ++i)
         {
-            directions[i].m_X = ((i + 2) % kLength == 0 ?  0 : 
+            directions[i].m_X = ((i + 2) % kLength == 0 ?  0 :
                                 ((i + 2) % kLength == 1 ? -1 : 1));
             directions[i].m_Y = (i % kLength == 0 ? 0 : 1);
         }
-                
+
         uint32_t result = 0;
 
         for(uint32_t s = 0; s < kSearchMax; ++s)
@@ -99,7 +99,7 @@ namespace Euler {
             {
                  int32_t lastX = x + directions[d].m_X  * kLength;
                  int32_t lastY = y + directions[d].m_Y * kLength;
-             
+
                  // Check we are not out of bounds
                  if(lastX < 0 || lastY < 0 || lastX >= kGridWidth || lastY >= kGridHeight)
                  {

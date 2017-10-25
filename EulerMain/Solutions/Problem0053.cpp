@@ -14,18 +14,18 @@ namespace Euler {
      *
      * In general,
      *
-     *  n^C_r =	n! / (r!(n−r)!), where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
+     *  n^C_r = n! / (r!(n−r)!), where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
      *
      * It is not until n = 23, that a value exceeds one-million: 23^C_10 = 1144066.
      *
-     * How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are 
+     * How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are
      * greater than one-million?
      */
     void Problem53::Solve()
     {
-		const uint32_t kLowerBound = 1000000;
-		const uint32_t kMinN = 1;
-		const uint32_t kMaxN = 100;
+        const uint32_t kLowerBound = 1000000;
+        const uint32_t kMinN = 1;
+        const uint32_t kMaxN = 100;
         uint32_t result = 0;
 
         // We need to generate the Binomial Coefficients

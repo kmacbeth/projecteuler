@@ -5,17 +5,17 @@
 
 namespace EulerLib {
 
-	class LexicographicPermutator {
+    class LexicographicPermutator {
 
-	public:
+    public:
         LexicographicPermutator(bool m_bFirstPermutation = true);
 
-		bool operator()(std::vector<uint32_t>& a_rElements);
+        bool operator()(std::vector<uint32_t>& a_rElements);
 
     private:
         bool m_bFirstPermutation;
 
-	};
+    };
 
 }
 

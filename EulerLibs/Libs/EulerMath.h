@@ -96,7 +96,7 @@ namespace EulerLib {
     {
         // 0! = 1
         T result = a_Number > 0 ? a_Number : 1;
-        
+
         // 0! and 1!
         if (result < 2)
         {
@@ -151,7 +151,7 @@ namespace EulerLib {
 
         return result;
     }
-    
+
     /**
      * Test primality of a number
      */
@@ -308,33 +308,33 @@ namespace EulerLib {
         return (n == Round(n));
     }
 
-	/**
-	 * Pentagonal number test.
-	 *
-	 * @param a_Number Number to test.
-	 *
-	 * @return Whether a_Number is a pentagonal number or not.
-	 */
-	inline bool IsPentagonalNumber(uint64_t a_Number)
-	{
-		double n = (SquareRoot(24.0 * static_cast<double>(a_Number) + 1.0) + 1.0) / 6.0;
+    /**
+     * Pentagonal number test.
+     *
+     * @param a_Number Number to test.
+     *
+     * @return Whether a_Number is a pentagonal number or not.
+     */
+    inline bool IsPentagonalNumber(uint64_t a_Number)
+    {
+        double n = (SquareRoot(24.0 * static_cast<double>(a_Number) + 1.0) + 1.0) / 6.0;
 
-		return (n == Round(n));
-	}
+        return (n == Round(n));
+    }
 
-	/**
-	* Hexagonal number test.
-	*
-	* @param a_Number Number to test.
-	*
-	* @return Whether a_Number is a hexagonal number or not.
-	*/
-	inline bool IsHexagonalNumber(uint64_t a_Number)
-	{
-		double n = (SquareRoot(8.0 * static_cast<double>(a_Number) + 1.0) + 1.0) / 4.0;
+    /**
+    * Hexagonal number test.
+    *
+    * @param a_Number Number to test.
+    *
+    * @return Whether a_Number is a hexagonal number or not.
+    */
+    inline bool IsHexagonalNumber(uint64_t a_Number)
+    {
+        double n = (SquareRoot(8.0 * static_cast<double>(a_Number) + 1.0) + 1.0) / 4.0;
 
-		return (n == Round(n));
-	}
+        return (n == Round(n));
+    }
 
     /**
      * Generate binomial coefficient.

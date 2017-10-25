@@ -8,7 +8,7 @@ namespace EulerLib {
      *
      * @param a_bFirstPermutation Indicate we do first permutation.
      */
-    LexicographicPermutator::LexicographicPermutator(bool a_bFirstPermutation) : 
+    LexicographicPermutator::LexicographicPermutator(bool a_bFirstPermutation) :
         m_bFirstPermutation(a_bFirstPermutation)
     {
     }
@@ -32,7 +32,7 @@ namespace EulerLib {
 
             return true;
         }
-        
+
         uint32_t first = a_rvElements.front();
         uint32_t last = a_rvElements.back();
 
