@@ -205,7 +205,7 @@ namespace EulerLib {
      *
      * @return Returns the rotated number.
      */
-    template<class T>
+    template<typename T>
     inline T Rotate(T a_Number, uint32_t a_NumRotation, uint32_t a_DigitCount)
     {
         const T kBase = 10;
