@@ -1,97 +1,154 @@
 """Euler Problem Templates."""
 import sys
 from pathlib import Path
-
-MAIN_PATH = "../EulerMain"
-PROBLEM_PATH = "../EulerMain/Solutions"
-
-INCLUDE_STR = '#include "Solutions/Problem{number:04d}.h"'
-INIT_STR = '    m_pvProblemList.push_back(new Euler::Problem{number}());'
-
-
-def write_problem(path, template, number):
-    """Write template to target file."""
-    template_file = None
-    with open(template) as template_f:
-        template_file = template_f.read()
-    template_file = template_file.replace("{_number_}", str(number))
-    template_file = template_file.replace("{_zero_number_}", "{number:04d}".format(number=number))
-    with open(path.format(number=number), "w") as problem_f:
-        problem_f.write(template_file)
-
-def write_solution(path, number):
-    """Write solutions header and cpp files.
-
-    TODO: refactor to reuse the function for a single file,
-          like the write_problem function.
-    """
-    # Start with header file
-    template_file = None
-    with open("Cpp/Problem_Includes.h") as solution_f:
-        template_file = solution_f.read()
-    # Generate a list of includes
-    includes = []
-    for problem_num in range(1, number + 1):
-        includes.append(INCLUDE_STR.format(number=problem_num))
-    with open(path + "/Problem_Includes.h", "w") as solution_f:
-        solution_f.write(template_file.replace("{_solutions_}", "\n".join(includes)))
-    # Now cpp file
-    with open("Cpp/Solutions_Initialize.cpp") as solution_f:
-        template_file = solution_f.read()
-    # Generate a list of case
-    cases = []
-    for problem_num in range(1, number + 1):
-        cases.append(INIT_STR.format(number=problem_num))
-    with open(path + "/Solutions_Initialize.cpp", "w") as solution_f:
-        solution_f.write(template_file.replace("{_solutions_}", "\n".join(cases)))
+from string import Template
 
 def display_help():
     """Display help text."""
-    print("Usage: Template.py NUMBER")
-    print("  -h, --help    Display this help text")
+    print("Usage: Template.py [--dry-run] NUMBER")
+    print("  -h, --help     Display this help text")
+    print("      --dry-run  Execute but do not copy files.")
     print("")
     print("  NUMBER a new Project Euler problem number to generate.")
 
+class EulerTemplate:
+    """Euler template."""
+    def __init__(self, filename):
+        with open(filename, "r") as file_f:
+            self.template = Template(file_f.read())
+        self.text = ""
+
+    def replace(self, arguments):
+        """Substitute templates with arguments.
+
+        param: arguments dictionary matching the template variables.
+        """
+        self.text = self.template.substitute(arguments)
+
+    def write(self, filename):
+        """Write new template to file."""
+        with open(filename, "w") as file_f:
+            file_f.write(self.text)
+
+    def show(self):
+        """Show output to STDOUT."""
+        print(self.text)
+
+
+class Application:
+    """"Application for templates."""
+
+    MAIN_PATH = "../EulerMain"
+    PROBLEM_PATH = "../EulerMain/Solutions"
+
+    def __init__(self):
+        self.dry_run = False
+        self.number = 0
+        self.problem_name = "Problem{:04d}"
+        self.target_name = Application.PROBLEM_PATH + "/" + self.problem_name
+
+    def parse_args(self, arguments):
+        """Parse command line arguments."""
+        while arguments:
+            argument = arguments[0]
+            arguments.pop(0)
+            if argument.startswith(("-h", "--help")):
+                display_help()
+                return False
+            if argument.startswith("--dry-run"):
+                self.dry_run = True
+            else:
+                try:
+                    self.number = int(argument)
+                except ValueError:
+                    print("Please provide a problem number")
+                    return False
+        return True
+
+    def run(self):
+        """Run application."""
+        if not self.parse_args(sys.argv[1:]):
+            return False
+        # Target file
+        if self.exists_target_file():
+            return False
+        # Write template files to destination
+        self.write_problem()
+        self.write_problem_includes()
+        self.write_solutions_initialization()
+        print("Templates for problem {number} created.".format(number=self.number))
+
+    def exists_target_file(self):
+        """Verify if target file already exists.
+
+        When target file exists, propose a new problem number.
+        """
+        header_name = self.target_name + ".h"
+        target_file = Path(header_name.format(self.number))
+        if target_file.is_file():
+            print("Files already exist for " + self.problem_name.format(self.number))
+            while target_file.is_file():
+                self.number += 1
+                target_file = Path(header_name.format(self.number))
+            user_choice = input("Perhaps generate " +
+                                self.problem_name.format(self.number) +
+                                "? (Y/n) ")
+            if user_choice != 'Y':
+                return True
+        self.problem_name.format(self.number)
+        self.target_name.format(self.number)
+        return False
+
+    def write_problem(self):
+        """Write problem files."""
+        problem_keys = {
+            "problem_num": self.number,
+            "problem_znum": "{:04d}".format(self.number)
+        }
+        filenames = [
+            "Cpp/Problem.h",
+            "Cpp/Problem.cpp"
+        ]
+        outputs = [
+            self.PROBLEM_PATH + self.problem_name + ".h",
+            self.PROBLEM_PATH + self.problem_name + ".cpp"
+        ]
+        self.write_template(filenames, outputs, problem_keys)
+
+    def write_problem_includes(self):
+        """Write problem includes file."""
+        problem_incl_list = ['#include "Solutions/Problem{:04d}.h"'.format(number)
+                             for number in range(1, self.number + 1)]
+        problem_incl_keys = {"problem_incl": "\n".join(problem_incl_list)}
+        filenames = ["Cpp/Problem_Includes.h"]
+        outputs = [self.MAIN_PATH + "/Problem_Includes.h"]
+        self.write_template(filenames, outputs, problem_incl_keys)
+
+    def write_solutions_initialization(self):
+        """Write solution initialization source file."""
+        problem_new = '    m_pvProblemList.push_back(new Euler::Problem{:d}());'
+        problem_new_list = [problem_new.format(number)
+                            for number in range(1, self.number + 1)]
+        problem_new_keys = {"problem_new": "\n".join(problem_new_list)}
+        filenames = ["Cpp/Solutions_Initialize.cpp"]
+        outputs = [self.MAIN_PATH + "/Solutions_Initialize.cpp"]
+        self.write_template(filenames, outputs, problem_new_keys)
+
+    def write_template(self, input_files, output_files, keys):
+        """Write a template."""
+        for input_file, output_file in zip(input_files, output_files):
+            template = EulerTemplate(input_file)
+            template.replace(keys)
+            if not self.dry_run:
+                template.write(output_file)
+            else:
+                template.show()
+
+
 def main():
-    """Create Problem files from template."""
-    if not sys.argv[1:]:
-        print("Please provide a problem number")
-        return 1
-    if sys.argv[1].startswith(("-h", "--help")):
-        display_help()
-        return 1
-    # Convert problem number into an actual number
-    try:
-        number = int(sys.argv[1])
-    except ValueError:
-        print("Please provide a problem number")
-        return 1
-
-    """TODO: use a single template for `Problem{number:04d}' since
-             it is used a lot.
-    """
-
-    # Check if files already exists to avoid overwritting and
-    # propose a new number if already existent.
-    target_file = Path(PROBLEM_PATH + "/Problem{number:04d}.h".format(number=number))
-    if target_file.is_file():
-        print("Files already exist for Problem{number:04d}".format(number=number))
-        while target_file.is_file():
-            number += 1
-            target_file = Path(PROBLEM_PATH + "/Problem{number:04d}.h".format(number=number))
-        user_choice = input("Perhaps generate Problem{number:04d}? (Y/n) ".format(number=number))
-        if user_choice != 'Y':
-            return 1
-
-    # Now that we have a valid problem number, read templates and create files
-    write_problem(PROBLEM_PATH + "/Problem{number:04d}.h", "Cpp/Problem.h", number)
-    write_problem(PROBLEM_PATH + "/Problem{number:04d}.cpp", "Cpp/Problem.cpp", number)
-
-    # Update the Solutions header/cpp to add the new problem
-    write_solution(MAIN_PATH, number)
-
-    print("Templates for problem {number} created.".format(number=number))
-
+    """Run main application."""
+    app = Application()
+    return app.run()
 
 if __name__ == "__main__":
     sys.exit(main())

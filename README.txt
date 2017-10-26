@@ -1,12 +1,7 @@
 README
 ======
 
-Starting with Problem 51, I started coding with C++11.
-
-Refactoring
------------
-
-The Templates and script refactoring TODO!
+Starting with Problem 51, C++11 will be used.
 
 Missing
 -------

@@ -1,4 +1,4 @@
-#include "Problem{_zero_number_}.h"
+#include "Problem${problem_znum}.h"
 
 namespace Euler {
 
@@ -7,7 +7,7 @@ namespace Euler {
      *
      *
      */
-    void Problem{_number_}::Solve()
+    void Problem${problem_num}::Solve()
     {
         uint64_t result = 0;
 

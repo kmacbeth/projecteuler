@@ -7,5 +7,5 @@
 void Solutions::Initialize()
 {
     // m_pvProblemList.push_back(new Euler::ProblemX());
-{_solutions_}
+${problem_new}
 }
