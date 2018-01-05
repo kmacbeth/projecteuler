@@ -1,9 +1,12 @@
 README
 ======
 
-Starting with Problem 51, C++11 will be used.
+This my personal Project Euler solutions written in C++.
+
+Starting with Problem 51, C++11 shall be used.
+
 
 Missing
 -------
 
-Problem 44: need to determine mathematically an upper bound.
+Problem 44: need to mathematically determine an upper bound.
